@@ -28,8 +28,8 @@ export default function App() {
               </div>
               <ul className="hero-stats" aria-label="Indicadores de impacto">
                 <li>
-                  <strong>01</strong>
-                  <span>Produto cívico em operação</span>
+                  <strong>02</strong>
+                  <span>Produtos em desenvolvimento</span>
                 </li>
                 <li>
                   <strong>100%</strong>
@@ -42,6 +42,9 @@ export default function App() {
               </ul>
             </div>
             <aside className="hero-panel" aria-label="Destaques de entrega">
+              <div className="hero-logo-wrap">
+                <img src="/logotipo_nobackground.png" alt="Alcateia Tecnologia" className="hero-logo" />
+              </div>
               <div className="panel-card">
                 <p className="panel-label">Sprint atual</p>
                 <h2>Do protótipo ao lançamento com clareza e velocidade</h2>
@@ -131,7 +134,7 @@ export default function App() {
             <h2>Soluções que já estão gerando valor na prática.</h2>
             <div className="cards project-grid">
               <article className="card project-card">
-                <p className="project-tag">Aplicativo móvel</p>
+                <p className="project-tag tag-launch">Aplicativo móvel</p>
                 <h3>SOS Maringá</h3>
                 <p>
                   Plataforma que centraliza contatos de emergência da cidade com
@@ -143,6 +146,23 @@ export default function App() {
                   <li>Acesso em segundos aos canais essenciais</li>
                 </ul>
                 <Link to="/projetos/sos-maringa" className="link">
+                  Conhecer página completa do produto
+                </Link>
+              </article>
+              <article className="card project-card">
+                <p className="project-tag tag-workshop">Sistema SaaS · Oficinas</p>
+                <h3>Velo</h3>
+                <p>
+                  Plataforma de gestão para oficinas mecânicas — ordens de
+                  serviço, assinaturas, controle financeiro e operação digital
+                  completa em um só lugar.
+                </p>
+                <ul className="project-metrics">
+                  <li>Gestão de OS e clientes em tempo real</li>
+                  <li>Cobranças e assinaturas automatizadas</li>
+                  <li>MVP completo, entrando em operação</li>
+                </ul>
+                <Link to="/projetos/velo" className="link">
                   Conhecer página completa do produto
                 </Link>
               </article>

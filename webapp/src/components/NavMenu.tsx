@@ -40,7 +40,7 @@ export default function NavMenu() {
       <div className="container nav-inner">
         <a href="/" className="brand">
           <span className="brand-mark" aria-hidden="true">
-            <img src="/iv.svg" alt="" />
+            <img src="/logotipo_nobackground.png" alt="" />
           </span>
           <span className="brand-name">ALCATEIA</span>
         </a>

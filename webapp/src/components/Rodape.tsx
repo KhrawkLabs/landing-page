@@ -7,7 +7,10 @@ export default function Rodape() {
     <footer className="rodape">
       <div className="container footer-grid">
         <div className="footer-about">
-          <strong>ALCATEIA</strong>
+          <div className="footer-brand">
+            <img src="/logotipo_nobackground.png" alt="" className="footer-brand-logo" aria-hidden="true" />
+            <strong>ALCATEIA</strong>
+          </div>
           <p>
             Transformamos ideias em produtos digitais com foco em simplicidade,
             impacto e confiança.

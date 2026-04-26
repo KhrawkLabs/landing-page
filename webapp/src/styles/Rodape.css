@@ -1,8 +1,9 @@
 .rodape {
   margin-top: 40px;
   padding: 56px 0 20px;
-  background: #0f172a;
-  color: #e8edff;
+  background: #04060d;
+  color: var(--primary, #c4cde4);
+  border-top: 1px solid rgba(180, 195, 235, 0.1);
 }
 
 .footer-grid {
@@ -11,16 +12,30 @@
   gap: 22px;
 }
 
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-brand-logo {
+  height: 28px;
+  width: auto;
+  filter: drop-shadow(0 0 8px rgba(200, 215, 245, 0.12));
+}
+
 .footer-about strong {
   display: inline-block;
   font-size: 1.08rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--primary-strong, #edf0fa);
 }
 
 .footer-about p {
   margin: 10px 0 0;
-  color: #b9c3e6;
+  color: var(--muted, #7b87a8);
   max-width: 42ch;
 }
 
@@ -33,22 +48,23 @@
 .footer-links a,
 .footer-contact a {
   width: fit-content;
-  color: #d5defd;
+  color: var(--muted, #7b87a8);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.2s ease;
 }
 
 .footer-links a:hover,
 .footer-contact a:hover {
-  color: #ffffff;
+  color: var(--primary-strong, #edf0fa);
 }
 
 .footer-bottom {
   margin-top: 28px;
   padding-top: 16px;
-  border-top: 1px solid rgba(185, 195, 230, 0.25);
+  border-top: 1px solid rgba(180, 195, 235, 0.1);
   text-align: center;
-  color: #a8b3da;
+  color: var(--muted, #7b87a8);
   font-size: 0.84rem;
 }
 
