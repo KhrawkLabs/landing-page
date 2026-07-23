@@ -12,8 +12,8 @@ export default function Rodape() {
             <strong>ALCATEIA</strong>
           </div>
           <p>
-            Transformamos ideias em produtos digitais com foco em simplicidade,
-            impacto e confiança.
+            Estúdio de produto enxuto. Desenhamos, desenvolvemos e colocamos
+            software em produção — do banco de dados à interface.
           </p>
         </div>
 

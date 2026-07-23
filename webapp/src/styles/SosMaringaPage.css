@@ -18,20 +18,21 @@
 }
 
 .sos-detail-hero .panel-card {
-  border-color: rgba(148, 163, 230, 0.34);
-  box-shadow: 0 12px 26px rgba(42, 58, 134, 0.1);
+  border-color: rgba(147, 167, 255, 0.28);
+  box-shadow: var(--shadow), var(--glass-highlight);
 }
 
 .sos-detail-grid .card,
 .sos-feature-grid .card {
-  border-color: rgba(148, 163, 230, 0.28);
-  box-shadow: 0 8px 20px rgba(42, 58, 134, 0.08);
+  border-color: rgba(147, 167, 255, 0.2);
 }
 
 .sos-detail-grid .card:hover,
 .sos-feature-grid .card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(42, 58, 134, 0.12);
+  transform: translateY(-4px);
+  border-color: rgba(147, 167, 255, 0.34);
+  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(147, 167, 255, 0.1), var(--glass-highlight);
 }
 
 @media (max-width: 960px) {
