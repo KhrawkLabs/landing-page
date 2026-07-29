@@ -1,10 +1,10 @@
-# Alcateia Landing Page
+# Khrawk Labs Page
 
-Landing page institucional da Alcateia Tecnologia, com destaque para produtos e conversão de contato comercial.
+Landing page institucional da Khrawk Labs, com destaque para produtos e conversão de contato comercial.
 
 ## Sobre
 
-Este repositório contém a aplicação web da landing da Alcateia, com foco em:
+Este repositório contém a aplicação web da landing da Khrawk, com foco em:
 
 - posicionamento de marca;
 - apresentação de projetos;
@@ -74,4 +74,4 @@ Observação importante para SPA:
 
 Ambiente já validado no projeto:
 
-- `https://alcateiatec.vercel.app`
+- `https://khrawklabs.vercel.app`
