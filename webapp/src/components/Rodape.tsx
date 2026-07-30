@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/Rodape.css";
 
 export default function Rodape() {
@@ -5,34 +6,42 @@ export default function Rodape() {
 
   return (
     <footer className="rodape">
-      <div className="container footer-grid">
-        <div className="footer-about">
-          <div className="footer-brand">
-            <img src="/logotipo_nobackground.png" alt="" className="footer-brand-logo" aria-hidden="true" />
-            <strong>ALCATEIA</strong>
-          </div>
+      <div className="container rodape-grade">
+        <div className="rodape-marca">
+          <img src="/khrawk.svg" alt="" aria-hidden="true" />
           <p>
-            Estúdio de produto enxuto. Desenhamos, desenvolvemos e colocamos
-            software em produção — do banco de dados à interface.
+            Khrawk Labs — estúdio de produto. Desenhamos, escrevemos e
+            colocamos software em produção.
           </p>
         </div>
 
-        <div className="footer-links">
-          <a href="/#sobre">Sobre</a>
-          <a href="/#projetos">Projetos</a>
-          <a href="/#contatos">Contato</a>
-        </div>
+        <nav className="rodape-coluna" aria-label="Navegação do rodapé">
+          <p className="rotulo">Navegar</p>
+          <a href="/#produtos">Produtos</a>
+          <a href="/#estudio">Estúdio</a>
+          <a href="/#metodo">Método</a>
+          <a href="/#contato">Contato</a>
+        </nav>
 
-        <div className="footer-contact">
-          <a href="mailto:corporativo.alcateia@outlook.com">
-            corporativo.alcateia@outlook.com
+        <nav className="rodape-coluna" aria-label="Produtos">
+          <p className="rotulo">Produtos</p>
+          <Link to="/projetos/velo">Velo</Link>
+          <Link to="/projetos/duo">Duo</Link>
+        </nav>
+
+        <div className="rodape-coluna">
+          <p className="rotulo">Contato</p>
+          <a href="mailto:khrawklabs@outlook.com">khrawklabs@outlook.com</a>
+          <a href="tel:+5544999035478">+55 (44) 99903-5478</a>
+          <a href="https://wa.me/5544999035478" target="_blank" rel="noreferrer">
+            WhatsApp
           </a>
-          <a href="tel:+5544999035478">(44) 99903-5478</a>
         </div>
       </div>
 
-      <div className="container footer-bottom">
-        Copyright © {anoAtual} Alcateia. Todos os direitos reservados.
+      <div className="container rodape-base">
+        <span>© {anoAtual} Khrawk Labs</span>
+        <span>Maringá · Paraná · Brasil</span>
       </div>
     </footer>
   );

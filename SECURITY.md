@@ -13,7 +13,7 @@ The project is maintained from the `main` branch.
 
 If you discover a security vulnerability, please report it privately by email:
 
-- corporativo.alcateia@outlook.com
+- khrawklabs@outlook.com
 
 Please include:
 

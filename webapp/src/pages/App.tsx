@@ -1,211 +1,287 @@
+import { Link } from "react-router-dom";
 import NavMenu from "../components/NavMenu";
 import Rodape from "../components/Rodape";
 import "../styles/App.css";
-import { Link } from "react-router-dom";
+
+const STACK = [
+  ".NET / C#",
+  "React",
+  "TypeScript",
+  "PostgreSQL",
+  "React Native",
+  "Docker",
+  "CI/CD",
+  "Entity Framework",
+  "Railway",
+];
 
 export default function App() {
   return (
     <>
       <NavMenu />
+
       <main>
-        <header className="hero" id="home">
-          <div className="container hero-grid">
-            <div className="hero-content">
-              <span className="badge">Alcateia · Tecnologia</span>
-              <h1>
-                Ideias viram produto. E produto{" "}
-                <span className="grad">entra em operação.</span>
-              </h1>
-              <p className="subtitle">
-                A Alcateia é um estúdio de produto enxuto. O mesmo time desenha,
-                programa e leva para produção — do banco de dados à interface.
-                Menos apresentação, mais software rodando de verdade.
-              </p>
-              <div className="cta-row">
-                <a href="#projetos" className="btn">
-                  Ver o que construímos
-                </a>
-                <a href="#contatos" className="btn btn-outline">
-                  Falar com a Alcateia
-                </a>
-              </div>
-              <ul className="hero-stats" aria-label="Como a Alcateia trabalha">
-                <li>
-                  <strong>2</strong>
-                  <span>Produtos construídos</span>
-                </li>
-                <li>
-                  <strong>E2E</strong>
-                  <span>Da descoberta ao deploy</span>
-                </li>
-                <li>
-                  <strong>In-house</strong>
-                  <span>Time próprio, nada terceirizado</span>
-                </li>
-              </ul>
+        <header className="hero">
+          <div className="container">
+            <div className="hero-topo">
+              <p className="rotulo">Khrawk Labs</p>
+              <p className="rotulo">Estúdio de produto</p>
+              <p className="rotulo">Maringá · PR</p>
             </div>
-            <aside className="hero-panel" aria-label="Produto em destaque">
-              <div className="hero-logo-wrap">
-                <img
-                  src="/logotipo_nobackground.png"
-                  alt="Alcateia Tecnologia"
-                  className="hero-logo"
-                />
+
+            <div className="hero-titulo">
+              <h1>
+                A gente escreve,
+                <br />
+                sobe e mantém
+                <br />
+                <span className="serifa">no ar.</span>
+              </h1>
+              <img
+                src="/khrawk.svg"
+                alt=""
+                aria-hidden="true"
+                className="hero-marca"
+              />
+            </div>
+
+            <div className="hero-corpo">
+              <div>
+                <p className="texto">
+                  A Khrawk Labs é pequena por escolha. O mesmo par de mãos
+                  modela o banco, escreve a API, monta a interface e faz o
+                  deploy. <strong>Sem repasse entre etapas</strong> e sem
+                  apresentação bonita antes de existir código rodando.
+                </p>
+                <div className="hero-acoes">
+                  <a href="#produtos" className="botao">
+                    <span>Ver os produtos</span>
+                  </a>
+                  <a href="#contato" className="botao botao-vazado">
+                    <span>Falar com a gente</span>
+                  </a>
+                </div>
               </div>
-              <div className="panel-card">
-                <p className="panel-label">Produto em destaque</p>
-                <h2>Velo — a oficina inteira em uma tela</h2>
-                <ul>
-                  <li>Ordens de serviço e histórico de veículos</li>
-                  <li>Financeiro, caixa e cobranças automáticas</li>
-                  <li>SaaS multi-tenant em .NET, PostgreSQL e React</li>
-                </ul>
-                <Link to="/projetos/velo" className="link">
-                  Ver o Velo por dentro →
-                </Link>
-              </div>
-            </aside>
+
+              <dl className="ficha">
+                <div>
+                  <dt>Em operação</dt>
+                  <dd>Velo — SaaS para oficinas mecânicas</dd>
+                </div>
+                <div>
+                  <dt>Modelo</dt>
+                  <dd>Produto próprio + software sob medida</dd>
+                </div>
+                <div>
+                  <dt>Entrega</dt>
+                  <dd>Da descoberta ao deploy, ponta a ponta</dd>
+                </div>
+              </dl>
+            </div>
           </div>
         </header>
 
-        <section className="section trust" aria-label="Tecnologias que usamos">
+        <div className="ticker" aria-hidden="true">
+          <div className="ticker-trilha">
+            {[0, 1].map((copia) => (
+              <ul className="ticker-grupo" key={copia}>
+                {STACK.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        </div>
+
+        <section className="secao" id="produtos" style={{ borderTop: "none" }}>
           <div className="container">
-            <p className="section-kicker">O que roda por baixo</p>
-            <div className="logo-cloud">
-              <span>.NET / C#</span>
-              <span>React · TypeScript</span>
-              <span>React Native</span>
-              <span>PostgreSQL</span>
-              <span>Docker · CI/CD</span>
+            <div className="secao-topo">
+              <div>
+                <p className="rotulo">O que construímos</p>
+                <h2>
+                  Três produtos.
+                  <br />
+                  Cada um em um <span className="serifa">estágio</span>.
+                </h2>
+              </div>
+              <p className="texto">
+                Nada aqui é conceito de slide. Um está em produção com cliente
+                real, um está sendo escrito e um ainda está sendo validado com
+                empresa antes de virar código. O estágio vem escrito em cada
+                linha.
+              </p>
+            </div>
+
+            <div className="indice">
+              <Link to="/projetos/velo" className="indice-item">
+                <div className="indice-linha">
+                  <div className="indice-num">01</div>
+                  <div className="indice-nome">
+                    <h3>Velo</h3>
+                    <span className="indice-tag">SaaS · Oficinas mecânicas</span>
+                  </div>
+                  <p className="indice-desc">
+                    A operação inteira de uma oficina em uma tela: ordem de
+                    serviço, histórico do veículo, caixa, fiado, assinatura
+                    recorrente e emissão de NFS-e. Multi-tenant em .NET 10 e
+                    PostgreSQL.
+                  </p>
+                  <div className="indice-fim">
+                    <span className="status status-operacao">Em operação</span>
+                    <span className="indice-seta">Ver →</span>
+                  </div>
+                </div>
+              </Link>
+
+              <Link to="/projetos/duo" className="indice-item">
+                <div className="indice-linha">
+                  <div className="indice-num">02</div>
+                  <div className="indice-nome">
+                    <h3>Duo</h3>
+                    <span className="indice-tag">App · Áudio em tempo real</span>
+                  </div>
+                  <p className="indice-desc">
+                    Dois amigos treinando juntos, cada um ouvindo a própria
+                    música. Aperta o botão e a música abaixa dos dois lados
+                    sozinha — dá pra falar sem tirar o fone. Projeto pessoal,
+                    sem pretensão comercial.
+                  </p>
+                  <div className="indice-fim">
+                    <span className="status status-construcao">
+                      Em construção
+                    </span>
+                    <span className="indice-seta">Ver →</span>
+                  </div>
+                </div>
+              </Link>
+
+              <div className="indice-item">
+                <div className="indice-linha">
+                  <div className="indice-num">03</div>
+                  <div className="indice-nome">
+                    <h3>Manutenção em Campo</h3>
+                    <span className="indice-tag">SaaS · Climatização</span>
+                  </div>
+                  <p className="indice-desc">
+                    QR Code por equipamento: o técnico escaneia, vê o histórico,
+                    executa a OS, preenche o checklist, anexa foto e colhe a
+                    assinatura. O PDF e o PMOC saem automáticos. Em conversa com
+                    as primeiras empresas antes de abrir a IDE.
+                  </p>
+                  <div className="indice-fim">
+                    <span className="status status-validacao">
+                      Em validação
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section id="sobre" className="section">
-          <div className="container about-grid">
-            <div>
-              <p className="section-kicker">Sobre a Alcateia</p>
-              <h2>Um time pequeno, afiado e sem intermediário.</h2>
-              <p>
-                A Alcateia nasceu de uma inconformidade: software bom não devia
-                ser privilégio de empresa grande. Aqui o mesmo time pensa o
-                problema, escreve o código e leva para produção — decisão rápida,
-                qualidade alta e responsabilidade de ponta a ponta.
+        <section className="secao" id="estudio">
+          <div className="container sobre">
+            <div className="sobre-texto">
+              <p className="rotulo" style={{ marginBottom: 20 }}>
+                O estúdio
+              </p>
+              <h2>
+                Time pequeno,
+                <br />
+                sem <span className="serifa">intermediário</span>.
+              </h2>
+              <p className="texto" style={{ marginTop: 28 }}>
+                A Khrawk Labs nasceu de uma inconformidade simples: software bom
+                não devia ser privilégio de empresa grande. Oficina, prestadora
+                de serviço e negócio de bairro merecem a mesma qualidade de
+                ferramenta que uma empresa de tecnologia usa internamente.
+              </p>
+              <p className="texto">
+                Na prática isso significa decisão rápida, arquitetura enxuta e
+                responsabilidade de ponta a ponta. Quem entende o problema é
+                quem escreve o código e quem atende quando alguma coisa quebra.
               </p>
             </div>
-            <ul className="highlight-list">
+
+            <ul className="sobre-lista">
               <li>Quem desenha é quem entrega</li>
               <li>Arquitetura simples por decisão, não por preguiça</li>
               <li>Produto no ar vale mais que apresentação bonita</li>
+              <li>Escopo pequeno e honesto em vez de promessa grande</li>
             </ul>
           </div>
         </section>
 
-        <section id="mvv" className="section alt">
+        <section className="secao" id="metodo">
           <div className="container">
-            <p className="section-kicker">Como trabalhamos</p>
-            <h2>Três princípios que valem mais que um manifesto.</h2>
-            <div className="cards">
-              <article className="card value-card">
-                <p className="value-index">01</p>
+            <div className="secao-topo">
+              <div>
+                <p className="rotulo">Como trabalhamos</p>
+                <h2>
+                  Três princípios que valem
+                  <br />
+                  mais que um <span className="serifa">manifesto</span>.
+                </h2>
+              </div>
+            </div>
+
+            <div className="principios">
+              <article className="principio">
+                <p className="principio-num">01</p>
                 <h3>Em produção, não na apresentação</h3>
                 <p>
-                  Sucesso é software na mão do usuário, não uma apresentação
-                  bonita. Entregamos para produção e evoluímos sobre o uso real.
+                  Sucesso é software na mão do usuário. Colocamos em produção
+                  cedo e evoluímos em cima de uso real, não de suposição.
                 </p>
               </article>
-              <article className="card value-card">
-                <p className="value-index">02</p>
-                <h3>O mesmo time, do início ao fim</h3>
+
+              <article className="principio">
+                <p className="principio-num">02</p>
+                <h3>O mesmo time do começo ao fim</h3>
                 <p>
-                  Sem repasses nem ruído entre etapas. Quem descobre o problema é
-                  quem escreve o código e quem faz o deploy.
+                  Sem repasse e sem ruído entre etapas. Quem descobre o problema
+                  é quem escreve o código e quem aperta o deploy.
                 </p>
               </article>
-              <article className="card value-card">
-                <p className="value-index">03</p>
+
+              <article className="principio">
+                <p className="principio-num">03</p>
                 <h3>Simples que aguenta crescer</h3>
                 <p>
-                  Sem complexidade para parecer inteligente. Arquitetura enxuta
-                  que escala sem virar bola de neve.
+                  Nada de complexidade para parecer inteligente. Arquitetura
+                  enxuta que escala sem virar bola de neve de abstração.
                 </p>
               </article>
             </div>
           </div>
         </section>
 
-        <section id="projetos" className="section">
+        <section className="secao" id="contato">
           <div className="container">
-            <p className="section-kicker">O que já construímos</p>
-            <h2>Produtos reais — não conceito de slide.</h2>
-            <div className="cards project-grid">
-              <article className="card project-card">
-                <p className="project-tag tag-workshop">SaaS · Oficinas</p>
-                <h3>Velo</h3>
-                <p>
-                  A operação inteira de uma oficina mecânica em um só lugar:
-                  ordens de serviço, financeiro, emissão de NFS-e e cobranças —
-                  tudo digital.
-                </p>
-                <ul className="project-metrics">
-                  <li>OS, clientes e veículos em tempo real</li>
-                  <li>Caixa, assinaturas e pagamentos automatizados</li>
-                  <li>Multi-tenant em .NET · PostgreSQL · React</li>
-                </ul>
-                <Link to="/projetos/velo" className="link">
-                  Página completa do Velo →
-                </Link>
-              </article>
-              <article className="card project-card">
-                <p className="project-tag tag-launch">App · Cidade</p>
-                <h3>SOS Maringá</h3>
-                <p>
-                  Todos os contatos de emergência da cidade na palma da mão —
-                  funciona offline e disca em um toque quando cada segundo conta.
-                </p>
-                <ul className="project-metrics">
-                  <li>Consulta rápida, sem depender de internet</li>
-                  <li>Navegação pensada para situação crítica</li>
-                  <li>Os canais essenciais em segundos</li>
-                </ul>
-                <Link to="/projetos/sos-maringa" className="link">
-                  Página completa do SOS Maringá →
-                </Link>
-              </article>
-              <article className="card project-card">
-                <p className="project-tag">Próximo projeto</p>
-                <h3>Sua ideia pode ser a próxima</h3>
-                <p>
-                  Tem um problema que um bom software resolveria? É exatamente
-                  esse tipo de desafio que buscamos. Vamos conversar.
-                </p>
-                <a href="#contatos" className="link">
-                  Começar uma conversa →
-                </a>
-              </article>
-            </div>
-          </div>
-        </section>
+            <p className="rotulo">Contato</p>
+            <h2 style={{ marginTop: 20 }}>
+              Traga o problema.
+              <br />
+              A gente devolve <span className="serifa">o produto</span>.
+            </h2>
 
-        <section id="contatos" className="section">
-          <div className="container">
-            <div className="contact-panel">
-              <div>
-                <p className="section-kicker">Vamos construir</p>
-                <h2>Traga o problema. Entregamos o produto.</h2>
-                <p>
-                  Conte o desafio do seu negócio e desenhamos o caminho mais
-                  curto até um produto que funciona. Resposta rápida e direta.
-                </p>
-              </div>
-              <div className="contact-actions">
-                <a href="mailto:corporativo.alcateia@outlook.com" className="btn">
-                  corporativo.alcateia@outlook.com
-                </a>
-                <a href="tel:+5544999035478" className="btn btn-outline">
-                  (44) 99903-5478
-                </a>
-              </div>
+            <a
+              href="mailto:khrawklabs@outlook.com"
+              className="contato-email"
+            >
+              khrawklabs@outlook.com
+            </a>
+
+            <div className="contato-canais">
+              <a href="tel:+5544999035478">+55 (44) 99903-5478</a>
+              <a
+                href="https://wa.me/5544999035478"
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp
+              </a>
+              <span style={{ color: "var(--osso-45)" }}>Maringá · Paraná</span>
             </div>
           </div>
         </section>

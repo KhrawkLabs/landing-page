@@ -1,15 +1,23 @@
-# Khrawk Labs Page
+# Khrawk Labs — Landing Page
 
-Landing page institucional da Khrawk Labs, com destaque para produtos e conversão de contato comercial.
+Landing page institucional da Khrawk Labs, com destaque para os produtos do estúdio e conversão de contato comercial.
 
 ## Sobre
 
-Este repositório contém a aplicação web da landing da Khrawk, com foco em:
+Este repositório contém a aplicação web da landing da Khrawk Labs, com foco em:
 
 - posicionamento de marca;
-- apresentação de projetos;
+- apresentação dos produtos e do estágio real de cada um;
 - encaminhamento para contato;
-- página dedicada do produto `SOS Maringá`.
+- páginas dedicadas dos produtos `Velo` e `Duo`.
+
+## Identidade visual
+
+- Paleta estritamente preto e branco: `#000000` de fundo, `#f2efe9` (osso) de texto.
+- Sem gradiente, sem glassmorphism, sem sombra colorida. Hierarquia vem do tamanho do tipo, do filete de 1px e do espaço vazio.
+- Tipografia: **Space Grotesk** (títulos e texto), **JetBrains Mono** (rótulos e metadados), **Instrument Serif** itálico (destaques pontuais).
+- Textura de grão aplicada via overlay SVG em `body::after`.
+- Tokens centralizados em `webapp/src/styles/App.css` (`:root`).
 
 ## Stack
 
@@ -27,13 +35,22 @@ Este repositório contém a aplicação web da landing da Khrawk, com foco em:
 landing-page/
 ├─ .gitignore
 ├─ webapp/
+│  ├─ public/
+│  │  └─ khrawk.png          # marca (falcão)
 │  ├─ src/
 │  │  ├─ components/
+│  │  │  ├─ NavMenu.tsx
+│  │  │  └─ Rodape.tsx
 │  │  ├─ pages/
-│  │  │  ├─ App.tsx
-│  │  │  ├─ SosMaringaPage.tsx
-│  │  │  └─ main.tsx
+│  │  │  ├─ App.tsx          # landing principal
+│  │  │  ├─ VeloPage.tsx
+│  │  │  ├─ DuoPage.tsx
+│  │  │  └─ main.tsx         # rotas
 │  │  └─ styles/
+│  │     ├─ App.css          # tokens + base + home
+│  │     ├─ NavMenu.css
+│  │     ├─ ProjetoPage.css  # compartilhado pelas páginas de produto
+│  │     └─ Rodape.css
 │  ├─ package.json
 │  ├─ vercel.json
 │  └─ vite.config.ts
@@ -45,24 +62,29 @@ landing-page/
 ## Executar localmente
 
 ```bash
-cd webapp
-npm install
-npm run dev
+cd webapp && npm install && npm run dev
 ```
 
 ## Comandos úteis
 
 ```bash
-cd webapp
-npm run lint
-npm run build
-npm run preview
+cd webapp && npm run lint && npm run build
 ```
 
 ## Rotas atuais
 
 - `/` -> landing principal
-- `/projetos/sos-maringa` -> página dedicada do produto SOS Maringá
+- `/projetos/velo` -> página dedicada do produto Velo
+- `/projetos/duo` -> página dedicada do produto Duo
+- `*` -> redireciona para `/`
+
+## Produtos em destaque
+
+| Produto | Categoria | Estágio |
+| --- | --- | --- |
+| Velo | SaaS · Oficinas mecânicas | Em operação |
+| Duo | App · Áudio em tempo real | Em construção |
+| Manutenção em Campo | SaaS · Climatização | Em validação (sem página dedicada) |
 
 ## Deploy
 
@@ -70,8 +92,8 @@ Deploy de produção via Vercel.
 
 Observação importante para SPA:
 
-- o arquivo `webapp/vercel.json` define rewrite para `index.html`, garantindo que rotas diretas como `/projetos/sos-maringa` funcionem sem quebra.
+- o arquivo `webapp/vercel.json` define rewrite para `index.html`, garantindo que rotas diretas como `/projetos/velo` funcionem sem quebra.
 
-Ambiente já validado no projeto:
+Ambiente do projeto:
 
 - `https://khrawklabs.vercel.app`

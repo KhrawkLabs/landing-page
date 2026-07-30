@@ -1,14 +1,14 @@
-# Documentacao Atual - Landing Page Alcateia
+# Documentacao Atual - Landing Page Khrawk Labs
 
 ## 1) Visao geral
 
-Este repositorio contem a landing institucional da Alcateia e a pagina dedicada do produto `SOS Maringa`.
+Este repositorio contem a landing institucional da Khrawk Labs e as paginas dedicadas dos produtos `Velo` e `Duo`.
 
 Objetivos:
 - apresentar marca e proposta de valor;
-- mostrar projetos em destaque;
+- mostrar os produtos com o estagio real de cada um (operacao, construcao, validacao);
 - direcionar visitantes para contato comercial;
-- detalhar o produto SOS Maringa em rota propria.
+- detalhar Velo e Duo em rotas proprias.
 
 ## 2) Estrutura
 
@@ -21,19 +21,22 @@ landing-page/
 |     |- secret-scan.yml
 |     |- codeql.yml
 |- webapp/
+|  |- public/
+|  |  |- khrawk.png
 |  |- src/
 |  |  |- components/
 |  |  |  |- NavMenu.tsx
 |  |  |  |- Rodape.tsx
 |  |  |- pages/
 |  |  |  |- App.tsx
-|  |  |  |- SosMaringaPage.tsx
+|  |  |  |- VeloPage.tsx
+|  |  |  |- DuoPage.tsx
 |  |  |  |- main.tsx
 |  |  |- styles/
 |  |     |- App.css
 |  |     |- NavMenu.css
+|  |     |- ProjetoPage.css
 |  |     |- Rodape.css
-|  |     |- SosMaringaPage.css
 |  |- package.json
 |  |- package-lock.json
 |  |- vercel.json
@@ -56,63 +59,87 @@ Dependencias centrais:
 - `react-dom`
 - `react-router-dom`
 
-## 4) Front-end atual
+## 4) Sistema visual
 
-### Rotas
+Regras que sustentam o visual e devem ser respeitadas em qualquer alteracao:
+
+- Paleta estritamente preto e branco. Nenhuma cor de destaque, nenhum gradiente, nenhum `backdrop-filter`, nenhuma sombra colorida.
+- Tokens em `:root` dentro de `webapp/src/styles/App.css`:
+  - `--preto` `#000000`, `--osso` `#f2efe9`
+  - opacidades derivadas: `--osso-70`, `--osso-45`, `--osso-25`
+  - filetes: `--filete`, `--filete-forte`
+- Tipografia (carregada em `webapp/index.html`):
+  - `--display` Space Grotesk — titulos e corpo
+  - `--mono` JetBrains Mono — rotulos, metadados e selos de status
+  - `--serifa` Instrument Serif italico — destaque pontual dentro de titulos
+- Hierarquia vem de tamanho de tipo, filete de 1px e espaco vazio. Nao usar caixa colorida para separar bloco.
+- Grao de filme aplicado em `body::after` via SVG `feTurbulence` inline.
+- Bordas retas (`border-radius: 0`) em todo o sistema.
+- `prefers-reduced-motion` desliga o ticker e as transicoes.
+
+## 5) Front-end atual
+
+### Rotas (`webapp/src/pages/main.tsx`)
 
 - `/` -> landing principal
-- `/projetos/sos-maringa` -> pagina detalhada do produto SOS Maringa
+- `/projetos/velo` -> pagina detalhada do Velo
+- `/projetos/duo` -> pagina detalhada do Duo
+- `*` -> redireciona para `/`
 - rotas diretas em producao sao suportadas via rewrite SPA em `webapp/vercel.json`
 
 ### Pagina principal (`webapp/src/pages/App.tsx`)
 
 Secoes:
-1. Hero
-2. Segmentos/Confianca
-3. Sobre
-4. Missao, visao e valores
-5. Projetos
+1. Hero (titulo, ficha tecnica, CTAs)
+2. Ticker de stack
+3. Produtos — indice numerado com selo de status
+4. Estudio (sobre)
+5. Metodo (tres principios)
 6. Contato
 7. Rodape
 
-No card de projetos, `SOS Maringa` direciona para a pagina dedicada do produto.
+O indice de produtos e uma lista com filetes, nao uma grade de cards. As linhas de Velo e Duo sao `Link` e invertem para fundo osso no hover; a linha de Manutencao em Campo nao e clicavel porque ainda nao tem pagina.
 
-### Pagina de produto (`webapp/src/pages/SosMaringaPage.tsx`)
+### Paginas de produto (`VeloPage.tsx`, `DuoPage.tsx`)
 
-Conteudo:
-- problema que o app resolve;
-- publico-alvo;
-- funcionalidades principais;
-- status do MVP;
-- CTA para contato.
+Compartilham `webapp/src/styles/ProjetoPage.css`. Estrutura comum:
+- hero com link de volta, rotulos, selo de status, resumo e ficha tecnica;
+- tres blocos: problema, publico, solucao;
+- lista numerada de recursos;
+- bloco tecnico com lista de stack;
+- CTA final com navegacao para o outro produto.
 
 Comportamento:
 - ao abrir a rota, a pagina inicia no topo (`scrollTo(0,0)`).
 
+A pagina do Duo traz um bloco `.nota` deixando explicito que e projeto pessoal, sem monetizacao.
+
 ### Navegacao (`webapp/src/components/NavMenu.tsx`)
 
-- menu desktop e mobile;
-- links para secoes da landing (`/#...`);
-- CTA `Vamos conversar` direcionando para `/#contatos`;
-- fechamento com `Escape` e bloqueio de scroll no menu mobile aberto.
+- menu desktop e mobile (breakpoint 880px);
+- links para secoes da landing (`/#produtos`, `/#estudio`, `/#metodo`);
+- CTA `Contato` direcionando para `/#contato`;
+- fechamento com `Escape`, bloqueio de scroll e `hidden` no menu mobile fechado.
 
-## 5) Execucao local
+## 6) Marca
+
+- Arquivo unico: `webapp/public/khrawk.png` (falcao, traco claro sobre fundo transparente).
+- Usado na nav, no hero, no rodape e como favicon.
+- Ao substituir a marca, trocar apenas esse arquivo — nenhum outro asset de marca existe no repositorio.
+
+## 7) Execucao local
 
 ```bash
-cd webapp
-npm install
-npm run dev
+cd webapp && npm install && npm run dev
 ```
 
 Comandos de qualidade:
 
 ```bash
-cd webapp
-npm run lint
-npm run build
+cd webapp && npm run lint && npm run build
 ```
 
-## 6) CI e seguranca
+## 8) CI e seguranca
 
 Pipelines ativos em GitHub Actions:
 - `ci-security.yml` (lint + build + audit)
@@ -123,18 +150,18 @@ Dependabot configurado para:
 - npm em `/webapp`
 - GitHub Actions no repositorio
 
-## 7) Deploy
+## 9) Deploy
 
 Deploy em Vercel.
 
-Projeto validado:
-- `https://alcateiatec.vercel.app`
+Projeto:
+- `https://khrawklabs.vercel.app`
 
 Configuracao de rota:
 - `webapp/vercel.json` com rewrite de `/(.*)` para `/index.html`.
 
-## 8) Pendencias recomendadas
+## 10) Pendencias recomendadas
 
-1. Manter padrao de copy institucional na pagina dedicada de produto.
+1. Criar pagina dedicada de Manutencao em Campo quando o produto sair da validacao.
 2. Revisar periodicamente CTA e textos de conversao.
 3. Opcional: adicionar analytics para acompanhar origem de contatos.

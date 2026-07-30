@@ -1,0 +1,227 @@
+/* Estilos compartilhados pelas páginas de produto (/projetos/*) */
+
+.proj-hero {
+  padding: clamp(36px, 6vw, 64px) 0 clamp(48px, 7vw, 88px);
+}
+
+.proj-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: clamp(40px, 6vw, 72px);
+  font-family: var(--mono);
+  font-size: 0.688rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--osso-45);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.proj-voltar:hover {
+  color: var(--osso);
+}
+
+.proj-voltar span:first-child {
+  transition: transform 0.18s ease;
+}
+
+.proj-voltar:hover span:first-child {
+  transform: translateX(-4px);
+}
+
+.proj-cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+  margin-bottom: 26px;
+}
+
+.proj-titulo {
+  font-size: clamp(3.2rem, 12vw, 8rem);
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+  margin-bottom: clamp(28px, 4vw, 44px);
+}
+
+.proj-corpo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(28px, 5vw, 72px);
+  padding-top: clamp(28px, 4vw, 44px);
+  border-top: 1px solid var(--filete);
+}
+
+/* --- Blocos problema / público / solução --- */
+
+.blocos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--filete);
+  border: 1px solid var(--filete);
+}
+
+.bloco {
+  background: var(--preto);
+  padding: clamp(26px, 3vw, 42px);
+}
+
+.bloco .rotulo {
+  margin-bottom: 20px;
+}
+
+.bloco h3 {
+  margin-bottom: 16px;
+}
+
+.bloco p {
+  color: var(--osso-70);
+  font-size: 0.938rem;
+  line-height: 1.62;
+}
+
+.bloco ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bloco li {
+  display: grid;
+  grid-template-columns: 1.6rem minmax(0, 1fr);
+  gap: 8px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--filete);
+  color: var(--osso-70);
+  font-size: 0.938rem;
+  line-height: 1.45;
+}
+
+.bloco li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.bloco li::before {
+  content: "—";
+  font-family: var(--mono);
+  color: var(--osso-25);
+}
+
+/* --- Recursos: linhas numeradas --- */
+
+.recursos {
+  border-top: 1px solid var(--filete);
+}
+
+.recurso {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr) minmax(0, 1.3fr);
+  align-items: start;
+  gap: clamp(16px, 3vw, 40px);
+  padding: clamp(24px, 3vw, 38px) 0;
+  border-bottom: 1px solid var(--filete);
+}
+
+.recurso-num {
+  font-family: var(--mono);
+  font-size: 0.813rem;
+  letter-spacing: 0.1em;
+  color: var(--osso-25);
+  padding-top: 5px;
+}
+
+.recurso h3 {
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+}
+
+.recurso p {
+  color: var(--osso-70);
+  font-size: 0.938rem;
+  line-height: 1.62;
+  padding-top: 4px;
+}
+
+/* --- Stack --- */
+
+.stack-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+  list-style: none;
+  padding: 0;
+}
+
+.stack-lista li {
+  padding: 9px 16px;
+  border: 1px solid var(--filete);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--osso-70);
+}
+
+/* --- Nota (aviso honesto no topo de projeto pessoal) --- */
+
+.nota {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  padding: 22px 26px;
+  margin-top: 32px;
+  border: 1px solid var(--filete);
+  border-left: 2px solid var(--filete-forte);
+}
+
+.nota-marca {
+  font-family: var(--mono);
+  font-size: 0.688rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--osso-45);
+  padding-top: 3px;
+}
+
+.nota p {
+  color: var(--osso-70);
+  font-size: 0.938rem;
+  line-height: 1.62;
+}
+
+/* --- CTA final --- */
+
+.proj-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: clamp(24px, 4vw, 56px);
+}
+
+.proj-cta-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 980px) {
+  .proj-corpo,
+  .proj-cta {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .blocos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .recurso {
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    row-gap: 12px;
+  }
+
+  .recurso p {
+    grid-column: 2;
+  }
+}

@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
 import "../styles/NavMenu.css";
 
+const LINKS = [
+  { href: "/#produtos", texto: "Produtos" },
+  { href: "/#estudio", texto: "Estúdio" },
+  { href: "/#metodo", texto: "Método" },
+];
+
 export default function NavMenu() {
   const [menuAberto, setMenuAberto] = useState(false);
 
   useEffect(() => {
     const fecharNoDesktop = () => {
-      if (window.innerWidth > 860) {
+      if (window.innerWidth > 880) {
         setMenuAberto(false);
       }
     };
@@ -36,44 +42,36 @@ export default function NavMenu() {
   const fecharMenu = () => setMenuAberto(false);
 
   return (
-    <nav className="nav-menu" aria-label="Menu principal">
+    <nav className="nav" aria-label="Menu principal">
       <div className="container nav-inner">
-        <a href="/" className="brand">
-          <span className="brand-mark" aria-hidden="true">
-            <img src="/logotipo_nobackground.png" alt="" />
+        <a href="/" className="nav-marca" onClick={fecharMenu}>
+          <img src="/khrawk.svg" alt="" aria-hidden="true" />
+          <span>
+            Khrawk<em>Labs</em>
           </span>
-          <span className="brand-name">ALCATEIA</span>
         </a>
 
         <ul className="nav-links">
-          <li>
-            <a href="/#sobre">Sobre</a>
-          </li>
-          <li>
-            <a href="/#mvv">Essência</a>
-          </li>
-          <li>
-            <a href="/#projetos">Projetos</a>
-          </li>
-          <li>
-            <a href="/#contatos">Contato</a>
-          </li>
+          {LINKS.map((link) => (
+            <li key={link.href}>
+              <a href={link.href}>{link.texto}</a>
+            </li>
+          ))}
         </ul>
 
-        <div className="nav-actions">
-          <a href="/#contatos" className="nav-cta">
-            Vamos conversar
+        <div className="nav-acoes">
+          <a href="/#contato" className="nav-cta">
+            Contato
           </a>
 
           <button
             type="button"
-            className="nav-toggle"
+            className={`nav-toggle ${menuAberto ? "aberto" : ""}`}
             aria-label={menuAberto ? "Fechar menu" : "Abrir menu"}
             aria-expanded={menuAberto}
             aria-controls="menu-mobile"
             onClick={() => setMenuAberto((aberto) => !aberto)}
           >
-            <span />
             <span />
             <span />
           </button>
@@ -82,24 +80,19 @@ export default function NavMenu() {
 
       <div
         id="menu-mobile"
-        className={`mobile-menu ${menuAberto ? "open" : ""}`}
-        aria-hidden={!menuAberto}
+        className={`nav-mobile ${menuAberto ? "aberto" : ""}`}
+        hidden={!menuAberto}
       >
-        <div className="container mobile-menu-inner">
-          <a href="/#sobre" onClick={fecharMenu}>
-            Sobre
-          </a>
-          <a href="/#mvv" onClick={fecharMenu}>
-            Essência
-          </a>
-          <a href="/#projetos" onClick={fecharMenu}>
-            Projetos
-          </a>
-          <a href="/#contatos" onClick={fecharMenu}>
+        <div className="container nav-mobile-inner">
+          {LINKS.map((link, i) => (
+            <a key={link.href} href={link.href} onClick={fecharMenu}>
+              <span className="nav-mobile-num">0{i + 1}</span>
+              {link.texto}
+            </a>
+          ))}
+          <a href="/#contato" onClick={fecharMenu}>
+            <span className="nav-mobile-num">04</span>
             Contato
-          </a>
-          <a href="/#contatos" className="mobile-cta" onClick={fecharMenu}>
-            Vamos conversar
           </a>
         </div>
       </div>
