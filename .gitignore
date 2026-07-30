@@ -1,1 +1,4 @@
 .vercel
+
+# Configuração local de ferramentas de IDE/agente
+.claude/

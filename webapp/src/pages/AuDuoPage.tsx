@@ -19,7 +19,7 @@ const RECURSOS = [
   {
     titulo: "Sua música continua sua",
     texto:
-      "Cada um segue no próprio Spotify, YouTube Music ou no que estiver tocando. O Duo não reproduz música e não pede acesso à sua biblioteca — ele só manda o áudio dos outros apps dar licença.",
+      "Cada um segue no próprio Spotify, YouTube Music ou no que estiver tocando. O AuDuo não reproduz música e não pede acesso à sua biblioteca — ele só manda o áudio dos outros apps dar licença.",
   },
   {
     titulo: "Indicador de quem fala",
@@ -36,7 +36,7 @@ const STACK = [
   "TypeScript",
 ];
 
-export default function DuoPage() {
+export default function AuDuoPage() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
@@ -59,7 +59,7 @@ export default function DuoPage() {
               <span className="status status-construcao">Em construção</span>
             </div>
 
-            <h1 className="proj-titulo">Duo</h1>
+            <h1 className="proj-titulo">AuDuo</h1>
 
             <div className="proj-corpo">
               <div>

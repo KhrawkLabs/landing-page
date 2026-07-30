@@ -9,7 +9,7 @@ Este repositório contém a aplicação web da landing da Khrawk Labs, com foco 
 - posicionamento de marca;
 - apresentação dos produtos e do estágio real de cada um;
 - encaminhamento para contato;
-- páginas dedicadas dos produtos `Velo` e `Duo`.
+- páginas dedicadas dos produtos `Velo` e `AuDuo`.
 
 ## Identidade visual
 
@@ -44,7 +44,7 @@ landing-page/
 │  │  ├─ pages/
 │  │  │  ├─ App.tsx          # landing principal
 │  │  │  ├─ VeloPage.tsx
-│  │  │  ├─ DuoPage.tsx
+│  │  │  ├─ AuDuoPage.tsx
 │  │  │  └─ main.tsx         # rotas
 │  │  └─ styles/
 │  │     ├─ App.css          # tokens + base + home
@@ -75,7 +75,7 @@ cd webapp && npm run lint && npm run build
 
 - `/` -> landing principal
 - `/projetos/velo` -> página dedicada do produto Velo
-- `/projetos/duo` -> página dedicada do produto Duo
+- `/projetos/auduo` -> página dedicada do produto AuDuo
 - `*` -> redireciona para `/`
 
 ## Produtos em destaque
@@ -83,7 +83,7 @@ cd webapp && npm run lint && npm run build
 | Produto | Categoria | Estágio |
 | --- | --- | --- |
 | Velo | SaaS · Oficinas mecânicas | Em operação |
-| Duo | App · Áudio em tempo real | Em construção |
+| AuDuo | App · Áudio em tempo real | Em construção |
 | Manutenção em Campo | SaaS · Climatização | Em validação (sem página dedicada) |
 
 ## Deploy

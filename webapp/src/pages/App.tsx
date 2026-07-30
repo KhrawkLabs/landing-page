@@ -133,11 +133,11 @@ export default function App() {
                 </div>
               </Link>
 
-              <Link to="/projetos/duo" className="indice-item">
+              <Link to="/projetos/auduo" className="indice-item">
                 <div className="indice-linha">
                   <div className="indice-num">02</div>
                   <div className="indice-nome">
-                    <h3>Duo</h3>
+                    <h3>AuDuo</h3>
                     <span className="indice-tag">App · Áudio em tempo real</span>
                   </div>
                   <p className="indice-desc">

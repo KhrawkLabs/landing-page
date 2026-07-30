@@ -219,7 +219,7 @@ export default function VeloPage() {
               <a href="/#contato" className="botao">
                 <span>Falar com a Khrawk</span>
               </a>
-              <Link to="/projetos/duo" className="botao botao-vazado">
+              <Link to="/projetos/auduo" className="botao botao-vazado">
                 <span>Próximo produto →</span>
               </Link>
             </div>

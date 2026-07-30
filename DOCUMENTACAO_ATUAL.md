@@ -2,13 +2,13 @@
 
 ## 1) Visao geral
 
-Este repositorio contem a landing institucional da Khrawk Labs e as paginas dedicadas dos produtos `Velo` e `Duo`.
+Este repositorio contem a landing institucional da Khrawk Labs e as paginas dedicadas dos produtos `Velo` e `AuDuo`.
 
 Objetivos:
 - apresentar marca e proposta de valor;
 - mostrar os produtos com o estagio real de cada um (operacao, construcao, validacao);
 - direcionar visitantes para contato comercial;
-- detalhar Velo e Duo em rotas proprias.
+- detalhar Velo e AuDuo em rotas proprias.
 
 ## 2) Estrutura
 
@@ -30,7 +30,7 @@ landing-page/
 |  |  |- pages/
 |  |  |  |- App.tsx
 |  |  |  |- VeloPage.tsx
-|  |  |  |- DuoPage.tsx
+|  |  |  |- AuDuoPage.tsx
 |  |  |  |- main.tsx
 |  |  |- styles/
 |  |     |- App.css
@@ -83,7 +83,7 @@ Regras que sustentam o visual e devem ser respeitadas em qualquer alteracao:
 
 - `/` -> landing principal
 - `/projetos/velo` -> pagina detalhada do Velo
-- `/projetos/duo` -> pagina detalhada do Duo
+- `/projetos/auduo` -> pagina detalhada do AuDuo
 - `*` -> redireciona para `/`
 - rotas diretas em producao sao suportadas via rewrite SPA em `webapp/vercel.json`
 
@@ -98,9 +98,9 @@ Secoes:
 6. Contato
 7. Rodape
 
-O indice de produtos e uma lista com filetes, nao uma grade de cards. As linhas de Velo e Duo sao `Link` e invertem para fundo osso no hover; a linha de Manutencao em Campo nao e clicavel porque ainda nao tem pagina.
+O indice de produtos e uma lista com filetes, nao uma grade de cards. As linhas de Velo e AuDuo sao `Link` e invertem para fundo osso no hover; a linha de Manutencao em Campo nao e clicavel porque ainda nao tem pagina.
 
-### Paginas de produto (`VeloPage.tsx`, `DuoPage.tsx`)
+### Paginas de produto (`VeloPage.tsx`, `AuDuoPage.tsx`)
 
 Compartilham `webapp/src/styles/ProjetoPage.css`. Estrutura comum:
 - hero com link de volta, rotulos, selo de status, resumo e ficha tecnica;
@@ -112,7 +112,7 @@ Compartilham `webapp/src/styles/ProjetoPage.css`. Estrutura comum:
 Comportamento:
 - ao abrir a rota, a pagina inicia no topo (`scrollTo(0,0)`).
 
-A pagina do Duo traz um bloco `.nota` deixando explicito que e projeto pessoal, sem monetizacao.
+A pagina do AuDuo traz um bloco `.nota` deixando explicito que e projeto pessoal, sem monetizacao.
 
 ### Navegacao (`webapp/src/components/NavMenu.tsx`)
 
