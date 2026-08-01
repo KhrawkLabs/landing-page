@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useRevelar } from "../hooks/useRevelar";
 import NavMenu from "../components/NavMenu";
 import Rodape from "../components/Rodape";
 import "../styles/App.css";
@@ -37,6 +38,8 @@ const STACK = [
 ];
 
 export default function AuDuoPage() {
+  useRevelar();
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
@@ -64,13 +67,14 @@ export default function AuDuoPage() {
             <div className="proj-corpo">
               <div>
                 <p className="texto">
-                  Dois amigos treinando juntos, cada um com o próprio fone e a
+                  Duas pessoas treinando juntas, cada uma com o próprio fone e a
                   própria playlist.{" "}
                   <strong>
-                    Aperta o botão e a música abaixa dos dois lados sozinha
+                    Ao acionar o botão, a música abaixa automaticamente nos dois
+                    aparelhos
                   </strong>{" "}
-                  — dá pra perguntar quantas séries faltam sem tirar o fone,
-                  gritar ou repetir três vezes.
+                  — permitindo conversar sem retirar o fone nem repetir a
+                  pergunta.
                 </p>
 
                 <div className="nota">
@@ -79,7 +83,7 @@ export default function AuDuoPage() {
                     Projeto pessoal, sem meta de receita. Existe para praticar
                     áudio nativo e tempo real, e porque a dor é pequena mas
                     acontece toda semana. Não compete em prioridade com os
-                    produtos comerciais do estúdio.
+                    produtos comerciais da empresa.
                   </p>
                 </div>
               </div>
@@ -104,7 +108,7 @@ export default function AuDuoPage() {
 
         <section className="secao">
           <div className="container blocos">
-            <article className="bloco">
+            <article className="bloco" data-revelar>
               <p className="rotulo">Problema</p>
               <h3>O ritual do fone</h3>
               <p>
@@ -115,7 +119,7 @@ export default function AuDuoPage() {
               </p>
             </article>
 
-            <article className="bloco">
+            <article className="bloco" data-revelar>
               <p className="rotulo">Para quem</p>
               <h3>Quem treina acompanhado</h3>
               <ul>
@@ -125,7 +129,7 @@ export default function AuDuoPage() {
               </ul>
             </article>
 
-            <article className="bloco">
+            <article className="bloco" data-revelar>
               <p className="rotulo">Solução</p>
               <h3>Falar sem tirar o fone</h3>
               <p>
@@ -140,19 +144,20 @@ export default function AuDuoPage() {
 
         <section className="secao">
           <div className="container">
-            <div className="secao-topo">
+            <div className="secao-topo" data-revelar>
               <div>
                 <p className="rotulo">O que o MVP faz</p>
                 <h2>
-                  Quatro coisas.
+                  Quatro funções.
                   <br />
                   E mais <span className="serifa">nada</span>.
                 </h2>
               </div>
               <p className="texto">
-                Escopo fechado de propósito. App de treino que vira rede social
-                morre na segunda semana — esse aqui precisa abrir rápido,
-                funcionar com a tela bloqueada e sumir.
+                Escopo deliberadamente fechado. Aplicativo de treino que se
+                transforma em rede social perde o uso em poucas semanas — este
+                precisa abrir rápido, funcionar com a tela bloqueada e sair da
+                frente.
               </p>
             </div>
 
@@ -176,7 +181,7 @@ export default function AuDuoPage() {
             <h2 style={{ marginTop: 20 }}>
               O ducking não é
               <br />
-              <span className="serifa">gambiarra</span>.
+              <span className="serifa">improviso</span>.
             </h2>
             <p className="texto" style={{ marginTop: 26 }}>
               Abaixar o áudio de outro aplicativo durante a fala é comportamento
@@ -186,9 +191,9 @@ export default function AuDuoPage() {
               dois depende da API do Spotify ou do Apple Music.
             </p>
             <p className="texto" style={{ marginTop: 20 }}>
-              O trabalho de verdade está em outro lugar: manter o canal de voz
-              em tempo real estável com a tela bloqueada e no bolso, e fazer
-              isso sem torrar a bateria no meio do treino.
+              O desafio real está em outro ponto: manter o canal de voz em tempo
+              real estável com a tela bloqueada, sem comprometer a bateria ao
+              longo do treino.
             </p>
             <ul className="stack-lista">
               {STACK.map((item) => (
@@ -199,16 +204,16 @@ export default function AuDuoPage() {
         </section>
 
         <section className="secao">
-          <div className="container proj-cta">
+          <div className="container proj-cta" data-revelar>
             <div>
               <p className="rotulo">Acompanhar</p>
               <h2 style={{ marginTop: 20 }}>
                 Treina em dupla
-                <br />e usaria <span className="serifa">isso</span>?
+                <br />e usaria <span className="serifa">o AuDuo</span>?
               </h2>
               <p className="texto" style={{ marginTop: 24 }}>
-                Fala com a gente. Feedback de quem treina de verdade vale mais
-                que mais um fim de semana codando no escuro.
+                Entre em contato. O retorno de quem treina de verdade vale mais
+                que mais um fim de semana de desenvolvimento no escuro.
               </p>
             </div>
             <div className="proj-cta-acoes">

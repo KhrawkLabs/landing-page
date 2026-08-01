@@ -10,15 +10,15 @@ export default function Rodape() {
         <div className="rodape-marca">
           <img src="/khrawk.svg" alt="" aria-hidden="true" />
           <p>
-            Khrawk Labs — estúdio de produto. Desenhamos, escrevemos e
-            colocamos software em produção.
+            Khrawk Labs — software house. Projetamos, desenvolvemos e mantemos
+            software em produção.
           </p>
         </div>
 
         <nav className="rodape-coluna" aria-label="Navegação do rodapé">
           <p className="rotulo">Navegar</p>
-          <a href="/#produtos">Produtos</a>
-          <a href="/#estudio">Estúdio</a>
+          <a href="/#produtos">O que fazemos</a>
+          <a href="/#empresa">A empresa</a>
           <a href="/#metodo">Método</a>
           <a href="/#contato">Contato</a>
         </nav>

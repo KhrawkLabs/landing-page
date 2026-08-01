@@ -36,8 +36,12 @@ landing-page/
 ├─ .gitignore
 ├─ webapp/
 │  ├─ public/
-│  │  └─ khrawk.png          # marca (falcão)
+│  │  ├─ khrawk.svg          # marca (falcão, vetor)
+│  │  ├─ khrawk.png          # apple-touch-icon
+│  │  └─ favicon.ico         # 16/32/48px
 │  ├─ src/
+│  │  ├─ hooks/
+│  │  │  └─ useRevelar.ts    # revelação ao rolar
 │  │  ├─ components/
 │  │  │  ├─ NavMenu.tsx
 │  │  │  └─ Rodape.tsx
@@ -85,6 +89,7 @@ cd webapp && npm run lint && npm run build
 | Velo | SaaS · Oficinas mecânicas | Em operação |
 | AuDuo | App · Áudio em tempo real | Em construção |
 | Manutenção em Campo | SaaS · Climatização | Em validação (sem página dedicada) |
+| Landing pages e sites | Serviço · Sob medida | Sob demanda (orçamento via WhatsApp) |
 
 ## Deploy
 

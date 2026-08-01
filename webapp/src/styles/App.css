@@ -84,6 +84,49 @@ img {
 }
 
 /* --------------------------------------------------------------------------
+   Revelação ao rolar
+   Deliberadamente contida: 10px de deslocamento e 460ms. O padrão inflado
+   (40px, 800ms, cascata em tudo) é a assinatura visual de página gerada
+   automaticamente — aqui o movimento serve ao ritmo de leitura, não ao efeito.
+   O estado escondido só existe sob `.com-revelacao`, aplicada por JS.
+   -------------------------------------------------------------------------- */
+
+.com-revelacao [data-revelar] {
+  opacity: 0;
+  transform: translateY(10px);
+  will-change: opacity, transform;
+}
+
+.com-revelacao [data-revelar].revelado {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.46s cubic-bezier(0.22, 0.61, 0.24, 1),
+    transform 0.46s cubic-bezier(0.22, 0.61, 0.24, 1);
+  will-change: auto;
+}
+
+/* Escalonamento só onde vários itens entram no campo de visão ao mesmo tempo.
+   Nas listas verticais o próprio scroll já revela um a um — escalonar ali
+   criaria a cascata artificial que queremos evitar. */
+.com-revelacao .principios [data-revelar]:nth-child(2).revelado,
+.com-revelacao .blocos [data-revelar]:nth-child(2).revelado {
+  transition-delay: 70ms;
+}
+
+.com-revelacao .principios [data-revelar]:nth-child(3).revelado,
+.com-revelacao .blocos [data-revelar]:nth-child(3).revelado {
+  transition-delay: 140ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .com-revelacao [data-revelar] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Layout
    -------------------------------------------------------------------------- */
 
@@ -240,7 +283,7 @@ p {
 
 .hero-titulo {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: end;
   gap: clamp(24px, 4vw, 56px);
 }
@@ -248,7 +291,13 @@ p {
 .hero-marca {
   width: clamp(120px, 15vw, 210px);
   opacity: 0.9;
-  justify-self: end;
+  justify-self: start;
+}
+
+/* Com a marca à esquerda, o título alinha à direita: a borda reta encosta
+   na mesma margem do resto da página, em vez de terminar solta no meio. */
+.hero-titulo h1 {
+  text-align: right;
 }
 
 .hero-corpo {
@@ -499,6 +548,11 @@ a.indice-item:hover .status-operacao::before {
   transform: rotate(45deg);
 }
 
+.status-servico::before {
+  background: currentColor;
+  border-radius: 0;
+}
+
 .indice-seta {
   font-family: var(--mono);
   font-size: 0.75rem;
@@ -671,6 +725,11 @@ a.indice-item:hover .indice-seta {
   .hero-marca {
     justify-self: start;
     width: 96px;
+  }
+
+  /* Empilhado, o alinhamento à direita perde a referência e fica estranho. */
+  .hero-titulo h1 {
+    text-align: left;
   }
 
   .ficha > div {

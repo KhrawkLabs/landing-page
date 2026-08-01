@@ -13,18 +13,32 @@
     <title>Khrawk Labs</title>
     <meta
       name="description"
-      content="Khrawk Labs é um estúdio de produto em Maringá. Desenhamos, escrevemos e colocamos software em produção — do banco de dados à interface."
+      content="Khrawk Labs é uma software house em Maringá. Projetamos, desenvolvemos e mantemos software em produção — do banco de dados à interface. Também desenvolvemos landing pages e sites sob medida."
     />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Khrawk Labs" />
-    <meta property="og:title" content="Khrawk Labs — Estúdio de produto" />
+    <meta property="og:title" content="Khrawk Labs — Software house" />
     <meta
       property="og:description"
-      content="Desenhamos, escrevemos e colocamos software em produção. Do banco de dados à interface."
+      content="Projetamos, desenvolvemos e mantemos software em produção. Do banco de dados à interface."
     />
     <meta property="og:image" content="/khrawk.png" />
     <meta name="twitter:card" content="summary" />
+
+    <script>
+      // Marca o documento ANTES da primeira pintura: sem isso o conteúdo
+      // apareceria por um instante e só então seria escondido para revelar.
+      // Se o JS falhar ou estiver desligado, a classe nunca entra e a página
+      // renderiza inteira — o estado escondido depende dela.
+      try {
+        if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document.documentElement.className += " com-revelacao";
+        }
+      } catch (e) {
+        /* navegador sem matchMedia: segue sem revelação */
+      }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

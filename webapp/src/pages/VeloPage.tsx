@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useRevelar } from "../hooks/useRevelar";
 import NavMenu from "../components/NavMenu";
 import Rodape from "../components/Rodape";
 import "../styles/App.css";
@@ -50,6 +51,8 @@ const STACK = [
 ];
 
 export default function VeloPage() {
+  useRevelar();
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
@@ -88,10 +91,10 @@ export default function VeloPage() {
                 </p>
                 <div className="hero-acoes">
                   <a href="/#contato" className="botao">
-                    <span>Quero testar o Velo</span>
+                    <span>Solicitar demonstração</span>
                   </a>
                   <a href="#recursos" className="botao botao-vazado">
-                    <span>Ver o que entrega</span>
+                    <span>Ver funcionalidades</span>
                   </a>
                 </div>
               </div>
@@ -116,18 +119,18 @@ export default function VeloPage() {
 
         <section className="secao">
           <div className="container blocos">
-            <article className="bloco">
+            <article className="bloco" data-revelar>
               <p className="rotulo">Problema</p>
               <h3>Operação no papel não escala</h3>
               <p>
-                Oficina ainda anota OS em caderno, cobra no WhatsApp e fecha o
-                mês na planilha. O resultado é retrabalho, fiado esquecido,
-                inadimplência silenciosa e histórico de cliente que some quando
-                o funcionário sai.
+                Muitas oficinas ainda anotam a OS em caderno, cobram pelo WhatsApp e fecham o
+                mês em planilha. O resultado é retrabalho, fiado esquecido,
+                inadimplência silenciosa e histórico de cliente perdido quando
+                o funcionário deixa a empresa.
               </p>
             </article>
 
-            <article className="bloco">
+            <article className="bloco" data-revelar>
               <p className="rotulo">Para quem</p>
               <h3>Oficina que quer se profissionalizar</h3>
               <ul>
@@ -138,14 +141,14 @@ export default function VeloPage() {
               </ul>
             </article>
 
-            <article className="bloco">
+            <article className="bloco" data-revelar>
               <p className="rotulo">Solução</p>
               <h3>Operação digital de ponta a ponta</h3>
               <p>
-                O Velo cobre o fluxo inteiro em um só lugar e cobra por
-                assinatura, num preço que cabe em oficina pequena. Nada de
-                módulo caro que fica desligado — o que está lá dentro é o que a
-                oficina usa todo dia.
+                O Velo cobre o fluxo inteiro em um só lugar, com cobrança por
+                assinatura e preço acessível para a oficina de pequeno porte.
+                Sem módulos caros que ficam desligados — o que está no sistema é
+                o que a oficina utiliza diariamente.
               </p>
             </article>
           </div>
@@ -153,13 +156,13 @@ export default function VeloPage() {
 
         <section className="secao" id="recursos">
           <div className="container">
-            <div className="secao-topo">
+            <div className="secao-topo" data-revelar>
               <div>
                 <p className="rotulo">O que já entrega</p>
                 <h2>
-                  Nada de <span className="serifa">promessa</span>.
+                  Tudo isto já está
                   <br />
-                  Isso está no ar.
+                  <span className="serifa">em produção</span>.
                 </h2>
               </div>
             </div>
@@ -180,11 +183,11 @@ export default function VeloPage() {
 
         <section className="secao">
           <div className="container">
-            <p className="rotulo">Por baixo do capô</p>
+            <p className="rotulo">Arquitetura</p>
             <h2 style={{ marginTop: 20 }}>
-              Simples por decisão,
+              Simplicidade por decisão,
               <br />
-              não por <span className="serifa">preguiça</span>.
+              não por <span className="serifa">omissão</span>.
             </h2>
             <p className="texto" style={{ marginTop: 26 }}>
               Um backend em .NET com Minimal APIs, PostgreSQL como fonte da
@@ -202,22 +205,22 @@ export default function VeloPage() {
         </section>
 
         <section className="secao">
-          <div className="container proj-cta">
+          <div className="container proj-cta" data-revelar>
             <div>
               <p className="rotulo">Primeiras oficinas</p>
               <h2 style={{ marginTop: 20 }}>
-                Pronto pra digitalizar
+                Pronto para digitalizar
                 <br />
                 sua <span className="serifa">operação</span>?
               </h2>
               <p className="texto" style={{ marginTop: 24 }}>
                 O Velo está entrando em produção com as primeiras oficinas
-                parceiras. Chama a gente e conta como funciona a sua.
+                parceiras. Entre em contato e conte como funciona a sua operação.
               </p>
             </div>
             <div className="proj-cta-acoes">
               <a href="/#contato" className="botao">
-                <span>Falar com a Khrawk</span>
+                <span>Falar com a Khrawk Labs</span>
               </a>
               <Link to="/projetos/auduo" className="botao botao-vazado">
                 <span>Próximo produto →</span>

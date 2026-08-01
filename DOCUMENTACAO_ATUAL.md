@@ -22,11 +22,15 @@ landing-page/
 |     |- codeql.yml
 |- webapp/
 |  |- public/
+|  |  |- khrawk.svg
 |  |  |- khrawk.png
+|  |  |- favicon.ico
 |  |- src/
 |  |  |- components/
 |  |  |  |- NavMenu.tsx
 |  |  |  |- Rodape.tsx
+|  |  |- hooks/
+|  |  |  |- useRevelar.ts
 |  |  |- pages/
 |  |  |  |- App.tsx
 |  |  |  |- VeloPage.tsx
@@ -76,6 +80,32 @@ Regras que sustentam o visual e devem ser respeitadas em qualquer alteracao:
 - Grao de filme aplicado em `body::after` via SVG `feTurbulence` inline.
 - Bordas retas (`border-radius: 0`) em todo o sistema.
 - `prefers-reduced-motion` desliga o ticker e as transicoes.
+- Titulo do hero alinhado a direita, com a marca a esquerda: a borda reta do
+  texto encosta na mesma margem do resto da pagina. No mobile volta para a
+  esquerda, porque empilhado o alinhamento perde a referencia.
+
+### Revelacao ao rolar (`webapp/src/hooks/useRevelar.ts`)
+
+Elementos com `data-revelar` aparecem ao entrar na viewport. Deliberadamente
+contido: 10px de deslocamento e 460ms. O padrao inflado (40px, 800ms, cascata
+em tudo) e a assinatura visual de pagina gerada automaticamente.
+
+Regras que devem ser mantidas em qualquer alteracao:
+
+- **O hero fica de fora.** Conteudo acima da dobra aparecendo em fade e outro
+  vicio de pagina automatica.
+- **Revela uma vez so.** Reanimar ao rolar de volta cansa em leitura longa.
+- **Escalonamento apenas onde varios itens entram juntos** (`.principios` e
+  `.blocos`, lado a lado). Em lista vertical o proprio scroll ja revela um a
+  um; escalonar ali criaria a cascata artificial que se quer evitar.
+- **O conteudo do site depende deste codigo para ficar visivel**, entao ha dois
+  caminhos independentes: IntersectionObserver e listener de rolagem. O
+  estrangulamento do listener e por relogio e **nao** por `requestAnimationFrame`,
+  que nao dispara em aba de segundo plano nem em pagina que nao compoe quadros
+  — exatamente quando a rede de seguranca precisa funcionar.
+- O estado escondido vive sob `.com-revelacao`, classe aplicada por um script
+  inline no `index.html` antes da primeira pintura. **Sem JS a classe nunca
+  entra e a pagina renderiza inteira.** Nao mover esse estado para o CSS base.
 
 ## 5) Front-end atual
 
@@ -93,12 +123,19 @@ Secoes:
 1. Hero (titulo, ficha tecnica, CTAs)
 2. Ticker de stack
 3. Produtos — indice numerado com selo de status
-4. Estudio (sobre)
+4. A empresa (sobre)
 5. Metodo (tres principios)
 6. Contato
 7. Rodape
 
-O indice de produtos e uma lista com filetes, nao uma grade de cards. As linhas de Velo e AuDuo sao `Link` e invertem para fundo osso no hover; a linha de Manutencao em Campo nao e clicavel porque ainda nao tem pagina.
+O indice de produtos e uma lista com filetes, nao uma grade de cards. Sao quatro
+linhas: Velo e AuDuo sao `Link` para as paginas de produto; Manutencao em Campo
+nao e clicavel porque ainda nao tem pagina; Landing pages e um `<a>` externo
+para o WhatsApp com mensagem de orcamento ja preenchida. Todas invertem para
+fundo osso no hover.
+
+O numero de telefone do WhatsApp aparece em `App.tsx` (constante
+`WHATSAPP_ORCAMENTO`), no rodape e na secao de contato — trocar nos tres.
 
 ### Paginas de produto (`VeloPage.tsx`, `AuDuoPage.tsx`)
 
@@ -117,15 +154,17 @@ A pagina do AuDuo traz um bloco `.nota` deixando explicito que e projeto pessoal
 ### Navegacao (`webapp/src/components/NavMenu.tsx`)
 
 - menu desktop e mobile (breakpoint 880px);
-- links para secoes da landing (`/#produtos`, `/#estudio`, `/#metodo`);
+- links para secoes da landing (`/#produtos`, `/#empresa`, `/#metodo`);
 - CTA `Contato` direcionando para `/#contato`;
 - fechamento com `Escape`, bloqueio de scroll e `hidden` no menu mobile fechado.
 
 ## 6) Marca
 
-- Arquivo unico: `webapp/public/khrawk.png` (falcao, traco claro sobre fundo transparente).
-- Usado na nav, no hero, no rodape e como favicon.
-- Ao substituir a marca, trocar apenas esse arquivo — nenhum outro asset de marca existe no repositorio.
+- Vetor principal: `webapp/public/khrawk.svg` (falcao, tracado a partir do PNG oficial).
+- Complementos: `khrawk.png` (512px, apple-touch-icon) e `favicon.ico` (16/32/48px).
+- O SVG e usado na nav, no hero e no rodape; o `.ico` e o favicon da aba.
+- Ao substituir a marca, trocar os tres arquivos — nenhum outro asset de marca
+  existe no repositorio.
 
 ## 7) Execucao local
 
