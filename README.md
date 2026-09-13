@@ -82,14 +82,16 @@ cd webapp && npm run lint && npm run build
 - `/projetos/auduo` -> página dedicada do produto AuDuo
 - `*` -> redireciona para `/`
 
-## Produtos em destaque
+## Trabalhos em destaque
 
-| Produto | Categoria | Estágio |
+| Frente | Categoria | Estágio |
 | --- | --- | --- |
 | Velo | SaaS · Oficinas mecânicas | Em operação |
-| AuDuo | App · Áudio em tempo real | Em construção |
-| Manutenção em Campo | SaaS · Climatização | Em validação (sem página dedicada) |
-| Landing pages e sites | Serviço · Sob medida | Sob demanda (orçamento via WhatsApp) |
+| Manutenção em Campo | SaaS · Climatização · PMOC | Em validação (CTA de conversa via WhatsApp) |
+| AuDuo | Laboratório · Mobile · Tempo real | Em construção |
+| Gestão de Aluguel | SaaS · Proprietários de imóveis | Em estudo (CTA de conversa via WhatsApp) |
+| PowerTrain | App · Treino e progresso | Em estudo |
+| Sistemas sob medida | Serviço · Para a sua empresa | Sob demanda (orçamento via WhatsApp) |
 
 ## Deploy
 

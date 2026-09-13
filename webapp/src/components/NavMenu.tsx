@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "../styles/NavMenu.css";
 
 const LINKS = [
-  { href: "/#produtos", texto: "O que fazemos" },
+  { href: "/#produtos", texto: "Trabalhos" },
   { href: "/#empresa", texto: "A empresa" },
   { href: "/#metodo", texto: "Método" },
 ];

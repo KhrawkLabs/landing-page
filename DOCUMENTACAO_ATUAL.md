@@ -122,20 +122,36 @@ Regras que devem ser mantidas em qualquer alteracao:
 Secoes:
 1. Hero (titulo, ficha tecnica, CTAs)
 2. Ticker de stack
-3. Produtos — indice numerado com selo de status
+3. Trabalhos (`#produtos`) — vitrine numerada com selo de estagio
 4. A empresa (sobre)
 5. Metodo (tres principios)
 6. Contato
 7. Rodape
 
-O indice de produtos e uma lista com filetes, nao uma grade de cards. Sao quatro
-linhas: Velo e AuDuo sao `Link` para as paginas de produto; Manutencao em Campo
-nao e clicavel porque ainda nao tem pagina; Landing pages e um `<a>` externo
-para o WhatsApp com mensagem de orcamento ja preenchida. Todas invertem para
+A vitrine e uma lista com filetes, nao uma grade de cards. Nao e catalogo: mostra o
+tipo de problema resolvido e o estagio real de cada frente, em ordem de
+maturidade. Sao seis linhas:
+
+1. Velo — `Link` para a pagina do produto. Em operacao.
+2. Manutencao em Campo — `<a>` para o WhatsApp com mensagem de validacao. Em
+   validacao; serve de isca para achar empresas de climatizacao.
+3. AuDuo — `Link` para a pagina do laboratorio. Em construcao.
+4. Gestao de Aluguel — `<a>` para o WhatsApp com mensagem propria. Em estudo;
+   serve de isca para achar o primeiro proprietario. Nunca usar o apelido
+   interno do Notion como nome publico (risco juridico de marca).
+5. PowerTrain — sem link. Em estudo.
+6. Sistemas sob medida — `<a>` para o WhatsApp com mensagem de orcamento.
+
+Regra de entrada na vitrine: so entra o que existe ou o que se esta ativamente
+procurando alguem para validar. Ideia sem nenhum dos dois nao entra — dilui o
+Velo. Estagio tem que ser o real; "Em estudo" e o selo para o que ainda esta no
+papel.
+
+O CTA da secao Contato usa mensagem generica. Todas as linhas invertem para
 fundo osso no hover.
 
-O numero de telefone do WhatsApp aparece em `App.tsx` (constante
-`WHATSAPP_ORCAMENTO`), no rodape e na secao de contato — trocar nos tres.
+O numero de telefone do WhatsApp aparece em `App.tsx` (constante `WHATSAPP`,
+base das mensagens), no rodape e na secao de contato — trocar nos tres.
 
 ### Paginas de produto (`VeloPage.tsx`, `AuDuoPage.tsx`)
 

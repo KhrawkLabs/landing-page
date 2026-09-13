@@ -16,10 +16,30 @@ const STACK = [
   "Railway",
 ];
 
-const WHATSAPP_ORCAMENTO =
-  "https://wa.me/5544999035478?text=" +
+const WHATSAPP = "https://wa.me/5544999035478?text=";
+
+const WHATSAPP_CONTATO =
+  WHATSAPP +
   encodeURIComponent(
-    "Olá! Gostaria de solicitar um orçamento para uma landing page.",
+    "Olá! Vim pelo site da Khrawk Labs e gostaria de conversar sobre um projeto.",
+  );
+
+const WHATSAPP_SOB_MEDIDA =
+  WHATSAPP +
+  encodeURIComponent(
+    "Olá! Vim pelo site da Khrawk Labs e gostaria de um orçamento para um sistema ou site sob medida.",
+  );
+
+const WHATSAPP_MANUTENCAO =
+  WHATSAPP +
+  encodeURIComponent(
+    "Olá! Presto manutenção em campo e me interessei pela plataforma de PMOC que vocês estão construindo.",
+  );
+
+const WHATSAPP_ALUGUEL =
+  WHATSAPP +
+  encodeURIComponent(
+    "Olá! Tenho imóveis para alugar e me interessei pelo sistema de gestão de aluguel que vocês estão estudando.",
   );
 
 export default function App() {
@@ -107,17 +127,17 @@ export default function App() {
           <div className="container">
             <div className="secao-topo" data-revelar>
               <div>
-                <p className="rotulo">O que fazemos</p>
+                <p className="rotulo">No que estamos trabalhando</p>
                 <h2>
-                  Produtos próprios
-                  <br />e projetos <span className="serifa">sob medida</span>.
+                  Uma amostra do que
+                  <br />
+                  <span className="serifa">construímos</span>.
                 </h2>
               </div>
               <p className="texto">
-                Cada item abaixo traz o estágio real em que se encontra — em
-                operação com cliente, em desenvolvimento ou em validação
-                comercial. Ao final, os serviços que prestamos para outras
-                empresas.
+                Do que já roda com cliente ao que ainda está no papel. Não é
+                um catálogo: é o tipo de problema que resolvemos e o estágio
+                real de cada frente.
               </p>
             </div>
 
@@ -142,18 +162,50 @@ export default function App() {
                 </div>
               </Link>
 
-              <Link to="/projetos/auduo" className="indice-item" data-revelar>
+              <a
+                href={WHATSAPP_MANUTENCAO}
+                target="_blank"
+                rel="noreferrer"
+                className="indice-item"
+                data-revelar
+              >
                 <div className="indice-linha">
                   <div className="indice-num">02</div>
                   <div className="indice-nome">
-                    <h3>AuDuo</h3>
-                    <span className="indice-tag">App · Áudio em tempo real</span>
+                    <h3>Manutenção em Campo</h3>
+                    <span className="indice-tag">SaaS · Climatização · PMOC</span>
                   </div>
                   <p className="indice-desc">
-                    Duas pessoas treinando juntas, cada uma ouvindo a própria
-                    música. Ao acionar o microfone, o volume abaixa nos dois
-                    aparelhos automaticamente. Projeto pessoal, sem finalidade
-                    comercial.
+                    Estamos construindo isso junto com empresas de climatização
+                    de Maringá. O PMOC é obrigatório por lei e ninguém gosta de
+                    fazer: ordem de serviço, checklist, fotos e assinatura no
+                    celular do técnico, relatório e PMOC saindo prontos. Se você
+                    presta manutenção em campo, queremos conversar.
+                  </p>
+                  <div className="indice-fim">
+                    <span className="status status-validacao">
+                      Em validação
+                    </span>
+                    <span className="indice-seta">Quero conversar →</span>
+                  </div>
+                </div>
+              </a>
+
+              <Link to="/projetos/auduo" className="indice-item" data-revelar>
+                <div className="indice-linha">
+                  <div className="indice-num">03</div>
+                  <div className="indice-nome">
+                    <h3>AuDuo</h3>
+                    <span className="indice-tag">
+                      Laboratório · Mobile · Tempo real
+                    </span>
+                  </div>
+                  <p className="indice-desc">
+                    Projeto de laboratório: duas pessoas treinando juntas, cada
+                    uma ouvindo a própria música, e o volume abaixa nos dois
+                    aparelhos quando alguém fala. Áudio nativo, canal de voz em
+                    tempo real e React Native — o mesmo alcance técnico que
+                    levamos para projetos de cliente.
                   </p>
                   <div className="indice-fim">
                     <span className="status status-construcao">
@@ -164,30 +216,8 @@ export default function App() {
                 </div>
               </Link>
 
-              <div className="indice-item" data-revelar>
-                <div className="indice-linha">
-                  <div className="indice-num">03</div>
-                  <div className="indice-nome">
-                    <h3>Manutenção em Campo</h3>
-                    <span className="indice-tag">SaaS · Climatização</span>
-                  </div>
-                  <p className="indice-desc">
-                    QR Code por equipamento: o técnico escaneia, consulta o
-                    histórico, executa a ordem de serviço, preenche o checklist,
-                    anexa fotos e colhe a assinatura. Relatório em PDF e PMOC
-                    gerados automaticamente. Em validação com as primeiras
-                    empresas.
-                  </p>
-                  <div className="indice-fim">
-                    <span className="status status-validacao">
-                      Em validação
-                    </span>
-                  </div>
-                </div>
-              </div>
-
               <a
-                href={WHATSAPP_ORCAMENTO}
+                href={WHATSAPP_ALUGUEL}
                 target="_blank"
                 rel="noreferrer"
                 className="indice-item"
@@ -196,14 +226,64 @@ export default function App() {
                 <div className="indice-linha">
                   <div className="indice-num">04</div>
                   <div className="indice-nome">
-                    <h3>Landing pages e sites</h3>
-                    <span className="indice-tag">Serviço · Sob medida</span>
+                    <h3>Gestão de Aluguel</h3>
+                    <span className="indice-tag">
+                      SaaS · Proprietários de imóveis
+                    </span>
                   </div>
                   <p className="indice-desc">
-                    Também desenvolvemos landing pages e sites institucionais
-                    sob medida: design próprio, layout responsivo, boa
-                    performance e publicação com domínio configurado. Escopo e
-                    prazo definidos antes do início.
+                    Para quem tem de 2 a 15 imóveis e ainda controla o aluguel
+                    por planilha e WhatsApp: contrato, cobrança, lembrete de
+                    vencimento e prestação de contas em um só lugar. Pequeno
+                    demais para imobiliária, grande demais para planilha.
+                    Estamos ouvindo proprietários — se é o seu caso, queremos
+                    conversar.
+                  </p>
+                  <div className="indice-fim">
+                    <span className="status status-estudo">Em estudo</span>
+                    <span className="indice-seta">Quero conversar →</span>
+                  </div>
+                </div>
+              </a>
+
+              <div className="indice-item" data-revelar>
+                <div className="indice-linha">
+                  <div className="indice-num">05</div>
+                  <div className="indice-nome">
+                    <h3>PowerTrain</h3>
+                    <span className="indice-tag">App · Treino e progresso</span>
+                  </div>
+                  <p className="indice-desc">
+                    Para quem prefere montar o próprio treino em vez de seguir
+                    app engessado: plano por dia e grupo muscular, carga, séries
+                    e descanso, dieta manual e progresso com peso, medidas e
+                    fotos. Liberdade total, sem recurso básico atrás de
+                    paywall.
+                  </p>
+                  <div className="indice-fim">
+                    <span className="status status-estudo">Em estudo</span>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href={WHATSAPP_SOB_MEDIDA}
+                target="_blank"
+                rel="noreferrer"
+                className="indice-item"
+                data-revelar
+              >
+                <div className="indice-linha">
+                  <div className="indice-num">06</div>
+                  <div className="indice-nome">
+                    <h3>Sistemas sob medida</h3>
+                    <span className="indice-tag">Serviço · Para a sua empresa</span>
+                  </div>
+                  <p className="indice-desc">
+                    O mesmo ciclo que aplicamos nos produtos próprios, a serviço
+                    da sua operação: levantamento, modelagem, API, interface e
+                    publicação. Também fazemos landing pages e sites
+                    institucionais. Escopo e prazo definidos antes do início.
                   </p>
                   <div className="indice-fim">
                     <span className="status status-servico">Sob demanda</span>
@@ -308,12 +388,12 @@ export default function App() {
 
             <div className="hero-acoes" style={{ marginTop: 0 }}>
               <a
-                href={WHATSAPP_ORCAMENTO}
+                href={WHATSAPP_CONTATO}
                 target="_blank"
                 rel="noreferrer"
                 className="botao"
               >
-                <span>Solicitar orçamento no WhatsApp</span>
+                <span>Conversar no WhatsApp</span>
               </a>
               <a href="tel:+5544999035478" className="botao botao-vazado">
                 <span>+55 (44) 99903-5478</span>

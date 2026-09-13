@@ -501,7 +501,7 @@ a.indice-item:hover .indice-desc {
   padding-top: 6px;
 }
 
-/* Selo de status: em operação / em construção / em validação */
+/* Selo de status: em operação / em construção / em validação / em estudo */
 .status {
   display: inline-flex;
   align-items: center;
@@ -550,6 +550,13 @@ a.indice-item:hover .status-operacao::before {
 
 .status-servico::before {
   background: currentColor;
+  border-radius: 0;
+}
+
+/* Em estudo: ainda no papel. Quadrado vazado — o mais "aberto" dos marcadores. */
+.status-estudo::before {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px currentColor;
   border-radius: 0;
 }
 

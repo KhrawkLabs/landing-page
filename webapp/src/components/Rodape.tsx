@@ -17,14 +17,14 @@ export default function Rodape() {
 
         <nav className="rodape-coluna" aria-label="Navegação do rodapé">
           <p className="rotulo">Navegar</p>
-          <a href="/#produtos">O que fazemos</a>
+          <a href="/#produtos">Trabalhos</a>
           <a href="/#empresa">A empresa</a>
           <a href="/#metodo">Método</a>
           <a href="/#contato">Contato</a>
         </nav>
 
-        <nav className="rodape-coluna" aria-label="Produtos">
-          <p className="rotulo">Produtos</p>
+        <nav className="rodape-coluna" aria-label="Projetos">
+          <p className="rotulo">Projetos</p>
           <Link to="/projetos/velo">Velo</Link>
           <Link to="/projetos/auduo">AuDuo</Link>
         </nav>

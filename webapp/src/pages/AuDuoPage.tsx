@@ -57,8 +57,8 @@ export default function AuDuoPage() {
             </Link>
 
             <div className="proj-cabecalho">
-              <p className="rotulo">Produto 02</p>
-              <p className="rotulo">App · Áudio em tempo real</p>
+              <p className="rotulo">Laboratório 03</p>
+              <p className="rotulo">Mobile · Tempo real</p>
               <span className="status status-construcao">Em construção</span>
             </div>
 
