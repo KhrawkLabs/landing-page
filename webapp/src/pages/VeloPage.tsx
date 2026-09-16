@@ -23,11 +23,6 @@ const RECURSOS = [
       "Planos com cobrança recorrente automática via Asaas, alerta de inadimplência e gestão do ciclo de vida da assinatura — da adesão ao cancelamento.",
   },
   {
-    titulo: "Emissão de NFS-e",
-    texto:
-      "Nota fiscal de serviço emitida direto da OS, integrada ao gateway PlugNotas. Credenciais da prefeitura guardadas cifradas, com opção de operar sem emissão quando a oficina não precisa.",
-  },
-  {
     titulo: "Multi-tenant de verdade",
     texto:
       "Cada oficina enxerga só o que é dela. O isolamento é feito no servidor a partir do token, não em filtro de tela — nenhuma consulta de negócio roda sem o vínculo da oficina.",
@@ -83,8 +78,7 @@ export default function VeloPage() {
                   A operação inteira de uma oficina mecânica em uma tela. Da
                   entrada do veículo ao pagamento recorrente:{" "}
                   <strong>
-                    ordem de serviço, histórico, caixa, fiado, assinatura e
-                    nota fiscal
+                    ordem de serviço, histórico, caixa, fiado e assinatura
                   </strong>{" "}
                   — sem caderno, sem planilha e sem cobrança perdida no
                   WhatsApp.
@@ -137,7 +131,6 @@ export default function VeloPage() {
                 <li>Oficinas mecânicas de pequeno e médio porte</li>
                 <li>Gestor que quer controle real, não relatório bonito</li>
                 <li>Operação com carteira de clientes recorrentes</li>
-                <li>Quem precisa emitir NFS-e sem virar especialista fiscal</li>
               </ul>
             </article>
 
@@ -194,7 +187,7 @@ export default function VeloPage() {
               verdade e um front em React. Sem microserviço, sem camada de
               abstração que só existe para impressionar em diagrama. A
               complexidade fica onde o negócio realmente é complexo — no
-              financeiro e no fiscal.
+              financeiro.
             </p>
             <ul className="stack-lista">
               {STACK.map((item) => (

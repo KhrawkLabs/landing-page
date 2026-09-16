@@ -151,9 +151,9 @@ export default function App() {
                   </div>
                   <p className="indice-desc">
                     A operação completa de uma oficina em uma única tela: ordem
-                    de serviço, histórico do veículo, controle de caixa, fiado,
-                    assinatura recorrente e emissão de NFS-e. Arquitetura
-                    multi-tenant em .NET 10 e PostgreSQL.
+                    de serviço, histórico do veículo, controle de caixa, fiado
+                    e assinatura recorrente. Arquitetura multi-tenant em .NET
+                    10 e PostgreSQL.
                   </p>
                   <div className="indice-fim">
                     <span className="status status-operacao">Em operação</span>
