@@ -163,7 +163,7 @@ export default function App() {
               </Link>
 
               <a
-                href={WHATSAPP_MANUTENCAO}
+                href="https://bertalhajoias.pages.dev/"
                 target="_blank"
                 rel="noreferrer"
                 className="indice-item"
@@ -171,6 +171,33 @@ export default function App() {
               >
                 <div className="indice-linha">
                   <div className="indice-num">02</div>
+                  <div className="indice-nome">
+                    <h3>Bertalha Semijoias</h3>
+                    <span className="indice-tag">Site · Vitrine e pedidos</span>
+                  </div>
+                  <p className="indice-desc">
+                    Vitrine enxuta para uma loja de semijoias: catálogo que a
+                    própria dona atualiza sem mexer em código, pedido que chega
+                    no WhatsApp já escrito e Pix com o valor preenchido. Simples
+                    de propósito — já está em produção e passou de R$ 1 mil em
+                    vendas.
+                  </p>
+                  <div className="indice-fim">
+                    <span className="status status-operacao">Em operação</span>
+                    <span className="indice-seta">Ver site →</span>
+                  </div>
+                </div>
+              </a>
+
+              <a
+                href={WHATSAPP_MANUTENCAO}
+                target="_blank"
+                rel="noreferrer"
+                className="indice-item"
+                data-revelar
+              >
+                <div className="indice-linha">
+                  <div className="indice-num">03</div>
                   <div className="indice-nome">
                     <h3>Manutenção em Campo</h3>
                     <span className="indice-tag">SaaS · Climatização · PMOC</span>
@@ -193,7 +220,7 @@ export default function App() {
 
               <Link to="/projetos/auduo" className="indice-item" data-revelar>
                 <div className="indice-linha">
-                  <div className="indice-num">03</div>
+                  <div className="indice-num">04</div>
                   <div className="indice-nome">
                     <h3>AuDuo</h3>
                     <span className="indice-tag">
@@ -224,7 +251,7 @@ export default function App() {
                 data-revelar
               >
                 <div className="indice-linha">
-                  <div className="indice-num">04</div>
+                  <div className="indice-num">05</div>
                   <div className="indice-nome">
                     <h3>Gestão de Aluguel</h3>
                     <span className="indice-tag">
@@ -248,7 +275,7 @@ export default function App() {
 
               <div className="indice-item" data-revelar>
                 <div className="indice-linha">
-                  <div className="indice-num">05</div>
+                  <div className="indice-num">06</div>
                   <div className="indice-nome">
                     <h3>PowerTrain</h3>
                     <span className="indice-tag">App · Treino e progresso</span>
@@ -274,7 +301,7 @@ export default function App() {
                 data-revelar
               >
                 <div className="indice-linha">
-                  <div className="indice-num">06</div>
+                  <div className="indice-num">07</div>
                   <div className="indice-nome">
                     <h3>Sistemas sob medida</h3>
                     <span className="indice-tag">Serviço · Para a sua empresa</span>
