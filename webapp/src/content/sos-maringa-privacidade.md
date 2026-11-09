@@ -27,7 +27,7 @@ Esses dados podem entrar no backup automático do seu celular (iCloud ou Google)
 O app pede permissão de localização **somente durante o uso** e só a usa quando você toca em:
 
 - **"Ver o ponto mais próximo"**, no Mapa, para calcular a distância até os pontos de atendimento. O cálculo é feito no próprio celular.
-- **SOS por WhatsApp ou SMS**, no Perfil, para incluir sua localização na mensagem enviada aos seus contatos.
+- **"Avisar meus contatos" ou SOS por WhatsApp**, no Perfil, para incluir sua localização na mensagem enviada aos seus contatos.
 
 A localização não é guardada pelo app nem enviada para a Khrawk Labs. Você pode negar ou revogar a permissão a qualquer momento nos ajustes do celular. O resto do app continua funcionando.
 
@@ -41,10 +41,11 @@ Quando você toca para ligar ou mandar um SOS, o app abre o discador, o WhatsApp
 
 ## Serviços externos consultados
 
-Para mostrar o tempo e os alertas, o app consulta serviços públicos **sem enviar dados pessoais nem a sua localização**. As consultas usam sempre as coordenadas fixas do centro de Maringá:
+Para mostrar o tempo, os alertas e o radar, o app consulta serviços públicos **sem enviar dados pessoais nem a sua localização**. As consultas usam coordenadas fixas de Maringá e da região em volta:
 
-- **Open-Meteo** (open-meteo.com): previsão do tempo.
+- **Open-Meteo** (open-meteo.com): previsão do tempo, comparação de modelos de previsão e vento atual na região.
 - **INMET** (Instituto Nacional de Meteorologia): alertas meteorológicos oficiais.
+- **RainViewer** (rainviewer.com): imagens do radar de chuva exibidas sobre o mapa da aba Avisos.
 
 Como em qualquer acesso à internet, esses serviços podem registrar dados técnicos da conexão, como o endereço IP, conforme as políticas deles.
 
