@@ -1,0 +1,400 @@
+/* ==========================================================================
+   SOS Maringá — páginas /projetos/sos-maringa e /privacidade
+   Identidade do app: preto, branco e faixa vermelha. Blocos sólidos,
+   tipografia normal (Inter, como no app), sem caixa-alta espaçada.
+   ========================================================================== */
+
+.sos {
+  --sos-preto: #141414;
+  --sos-branco: #ffffff;
+  --sos-cinza: #f2f2f2;
+  --sos-texto-2: #4a4a4a;
+  --sos-linha: #dcdcdc;
+  --sos-vermelho: #c62828;
+
+  background: var(--sos-branco);
+  color: var(--sos-preto);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.sos h1,
+.sos h2,
+.sos h3 {
+  font-family: inherit;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.sos ::selection {
+  background: var(--sos-preto);
+  color: var(--sos-branco);
+}
+
+.sos :focus-visible {
+  outline: 3px solid var(--sos-vermelho);
+  outline-offset: 2px;
+}
+
+/* --- Topo preto --- */
+
+.sos-topo {
+  background: var(--sos-preto);
+  color: var(--sos-branco);
+  padding: clamp(28px, 5vw, 56px) 0 0;
+}
+
+.sos-topo-grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: end;
+}
+
+.sos-topo-grade > div {
+  padding-bottom: clamp(36px, 5vw, 64px);
+}
+
+.sos-voltar {
+  display: inline-block;
+  margin-bottom: clamp(28px, 5vw, 56px);
+  color: #b5b5b5;
+  font-size: 0.938rem;
+  text-decoration: none;
+}
+
+.sos-voltar:hover {
+  color: var(--sos-branco);
+}
+
+.sos-titulo {
+  font-size: clamp(3rem, 10vw, 6.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+.sos-lead {
+  max-width: 34rem;
+  margin: clamp(20px, 3vw, 32px) 0 0;
+  color: #e6e6e6;
+  font-size: clamp(1.063rem, 1.6vw, 1.25rem);
+  line-height: 1.5;
+}
+
+.sos-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.sos-botao,
+.sos-loja {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 22px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sos-botao-claro {
+  background: var(--sos-branco);
+  color: var(--sos-preto);
+}
+
+.sos-botao-claro:hover {
+  background: #e0e0e0;
+}
+
+/* Ainda não publicado: parece botão, mas não é link. */
+.sos-loja {
+  background: #2b2b2b;
+  color: #cfcfcf;
+  cursor: default;
+}
+
+/* Print do app saindo de baixo do topo, apoiado na faixa vermelha. */
+.sos-print {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 6px solid var(--sos-preto);
+  border-radius: 22px;
+  background: var(--sos-branco);
+}
+
+.sos-print-topo {
+  border-color: #3a3a3a;
+  border-bottom: none;
+  border-radius: 22px 22px 0 0;
+  aspect-ratio: 375 / 560;
+  object-fit: cover;
+  object-position: top;
+}
+
+.sos-faixa {
+  height: 8px;
+  background: var(--sos-vermelho);
+}
+
+/* --- Números de emergência --- */
+
+.sos-numeros {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.sos-numero {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: clamp(18px, 3vw, 32px) var(--gutter);
+  color: var(--sos-branco);
+  text-decoration: none;
+}
+
+.sos-numero strong {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.sos-numero span {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.sos-numero:hover strong {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+
+/* --- Seções --- */
+
+.sos-secao {
+  padding: clamp(56px, 8vw, 104px) 0;
+}
+
+.sos-secao + .sos-secao {
+  border-top: 1px solid var(--sos-linha);
+}
+
+.sos-secao-cinza {
+  background: var(--sos-cinza);
+}
+
+.sos-secao-cinza + .sos-secao,
+.sos-secao + .sos-secao-cinza {
+  border-top: none;
+}
+
+.sos-h2 {
+  font-size: clamp(1.625rem, 3.2vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.sos-p {
+  max-width: 38rem;
+  margin: 16px 0 0;
+  color: var(--sos-texto-2);
+}
+
+.sos-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--sos-preto);
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+
+.sos-duas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 6vw, 88px);
+  align-items: start;
+}
+
+/* --- As quatro abas --- */
+
+.sos-abas {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 36px);
+  margin-top: clamp(32px, 5vw, 56px);
+}
+
+.sos-aba h3 {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 4px solid var(--sos-vermelho);
+  font-size: 1.375rem;
+  font-weight: 800;
+}
+
+.sos-aba p {
+  margin: 10px 0 0;
+  color: var(--sos-texto-2);
+  font-size: 1rem;
+}
+
+/* --- Grupo de WhatsApp (bloco preto) --- */
+
+.sos-grupo {
+  background: var(--sos-preto);
+  color: var(--sos-branco);
+  padding: clamp(56px, 8vw, 96px) 0;
+  border-top: 8px solid var(--sos-vermelho);
+}
+
+.sos-grupo .sos-p {
+  color: #d6d6d6;
+}
+
+.sos-grupo-acao {
+  align-self: end;
+}
+
+/* --- 40199 --- */
+
+.sos-sms {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding: 26px 30px;
+  border-radius: 4px;
+  background: #c24e00;
+  color: var(--sos-branco);
+  text-decoration: none;
+}
+
+.sos-sms span {
+  font-size: 1.063rem;
+  font-weight: 600;
+}
+
+.sos-sms strong {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* --- Aviso --- */
+
+.sos-secao-aviso {
+  background: var(--sos-cinza);
+}
+
+.sos-aviso {
+  max-width: 48rem;
+  margin: 0;
+  padding-left: 20px;
+  border-left: 6px solid var(--sos-vermelho);
+  font-size: clamp(1.063rem, 1.6vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.sos-assinatura {
+  margin: 32px 0 0;
+  color: var(--sos-texto-2);
+  font-size: 0.938rem;
+}
+
+.sos-assinatura a {
+  color: var(--sos-preto);
+  text-underline-offset: 3px;
+}
+
+/* --- Política de privacidade --- */
+
+.sos-doc {
+  padding-top: clamp(40px, 6vw, 72px);
+  padding-bottom: clamp(64px, 9vw, 112px);
+}
+
+.sos-doc-corpo {
+  max-width: 44rem;
+}
+
+.sos-doc-corpo h2 {
+  margin: 44px 0 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.sos-doc-corpo p,
+.sos-doc-corpo ul {
+  margin: 14px 0 0;
+}
+
+.sos-doc-corpo ul {
+  padding-left: 1.25rem;
+}
+
+.sos-doc-corpo li + li {
+  margin-top: 8px;
+}
+
+.sos-doc-corpo strong {
+  font-weight: 700;
+}
+
+.sos-doc-corpo a {
+  color: var(--sos-preto);
+  text-underline-offset: 3px;
+}
+
+.sos-doc-data {
+  color: var(--sos-texto-2);
+}
+
+/* --- Responsivo --- */
+
+@media (max-width: 980px) {
+  .sos-abas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 48px;
+  }
+}
+
+@media (max-width: 760px) {
+  .sos-topo-grade,
+  .sos-duas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* No celular a tela Início já aparece logo abaixo, na lista das abas. */
+  .sos-print-topo {
+    display: none;
+  }
+
+  .sos-numeros {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sos-botao,
+  .sos-loja {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .sos-abas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sos-aba .sos-print {
+    width: min(100%, 300px);
+  }
+}

@@ -26,6 +26,7 @@ export default function Rodape() {
         <nav className="rodape-coluna" aria-label="Projetos">
           <p className="rotulo">Projetos</p>
           <Link to="/projetos/velo">Velo</Link>
+          <Link to="/projetos/sos-maringa">SOS Maringá</Link>
           <Link to="/projetos/auduo">AuDuo</Link>
         </nav>
 

@@ -3,6 +3,8 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import App from "./App.tsx";
 import AuDuoPage from "./AuDuoPage.tsx";
+import SosMaringaPage from "./SosMaringaPage.tsx";
+import SosPrivacidadePage from "./SosPrivacidadePage.tsx";
 import VeloPage from "./VeloPage.tsx";
 
 createRoot(document.getElementById("root")!).render(
@@ -12,6 +14,12 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/" element={<App />} />
         <Route path="/projetos/velo" element={<VeloPage />} />
         <Route path="/projetos/auduo" element={<AuDuoPage />} />
+        <Route path="/projetos/sos-maringa" element={<SosMaringaPage />} />
+        {/* URL cadastrada na Play Store: não mude sem atualizar lá. */}
+        <Route
+          path="/projetos/sos-maringa/privacidade"
+          element={<SosPrivacidadePage />}
+        />
         {/* O produto se chamava "Duo"; mantém link antigo funcionando. */}
         <Route
           path="/projetos/duo"

@@ -162,6 +162,32 @@ export default function App() {
                 </div>
               </Link>
 
+              <Link
+                to="/projetos/sos-maringa"
+                className="indice-item"
+                data-revelar
+              >
+                <div className="indice-linha">
+                  <div className="indice-num">02</div>
+                  <div className="indice-nome">
+                    <h3>SOS Maringá</h3>
+                    <span className="indice-tag">App · Emergências na cidade</span>
+                  </div>
+                  <p className="indice-desc">
+                    App gratuito para emergências em Maringá: 192, 193, 190 e
+                    199 em um toque, alertas oficiais do INMET, pontos de
+                    atendimento no mapa e SOS para os seus contatos com a
+                    localização. Funciona sem internet.
+                  </p>
+                  <div className="indice-fim">
+                    <span className="status status-construcao">
+                      Em lançamento
+                    </span>
+                    <span className="indice-seta">Ver →</span>
+                  </div>
+                </div>
+              </Link>
+
               <a
                 href="https://bertalhajoias.pages.dev/"
                 target="_blank"
@@ -170,7 +196,7 @@ export default function App() {
                 data-revelar
               >
                 <div className="indice-linha">
-                  <div className="indice-num">02</div>
+                  <div className="indice-num">03</div>
                   <div className="indice-nome">
                     <h3>Bertalha Semijoias</h3>
                     <span className="indice-tag">Site · Vitrine e pedidos</span>
@@ -197,7 +223,7 @@ export default function App() {
                 data-revelar
               >
                 <div className="indice-linha">
-                  <div className="indice-num">03</div>
+                  <div className="indice-num">04</div>
                   <div className="indice-nome">
                     <h3>Manutenção em Campo</h3>
                     <span className="indice-tag">SaaS · Climatização · PMOC</span>
@@ -220,7 +246,7 @@ export default function App() {
 
               <Link to="/projetos/auduo" className="indice-item" data-revelar>
                 <div className="indice-linha">
-                  <div className="indice-num">04</div>
+                  <div className="indice-num">05</div>
                   <div className="indice-nome">
                     <h3>AuDuo</h3>
                     <span className="indice-tag">
@@ -251,7 +277,7 @@ export default function App() {
                 data-revelar
               >
                 <div className="indice-linha">
-                  <div className="indice-num">05</div>
+                  <div className="indice-num">06</div>
                   <div className="indice-nome">
                     <h3>Gestão de Aluguel</h3>
                     <span className="indice-tag">
@@ -275,7 +301,7 @@ export default function App() {
 
               <div className="indice-item" data-revelar>
                 <div className="indice-linha">
-                  <div className="indice-num">06</div>
+                  <div className="indice-num">07</div>
                   <div className="indice-nome">
                     <h3>PowerTrain</h3>
                     <span className="indice-tag">App · Treino e progresso</span>
@@ -301,7 +327,7 @@ export default function App() {
                 data-revelar
               >
                 <div className="indice-linha">
-                  <div className="indice-num">07</div>
+                  <div className="indice-num">08</div>
                   <div className="indice-nome">
                     <h3>Sistemas sob medida</h3>
                     <span className="indice-tag">Serviço · Para a sua empresa</span>
