@@ -21,6 +21,7 @@ export default function Rodape() {
           <a href="/#empresa">A empresa</a>
           <a href="/#metodo">Método</a>
           <a href="/#contato">Contato</a>
+          <Link to="/khrawk">KHRAWK Conteúdos</Link>
         </nav>
 
         <nav className="rodape-coluna" aria-label="Projetos">

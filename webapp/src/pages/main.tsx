@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import App from "./App.tsx";
 import AuDuoPage from "./AuDuoPage.tsx";
+import KhrawkPage from "./KhrawkPage.tsx";
 import SosMaringaPage from "./SosMaringaPage.tsx";
 import SosPrivacidadePage from "./SosPrivacidadePage.tsx";
 import VeloPage from "./VeloPage.tsx";
@@ -12,6 +13,7 @@ createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/khrawk" element={<KhrawkPage />} />
         <Route path="/projetos/velo" element={<VeloPage />} />
         <Route path="/projetos/auduo" element={<AuDuoPage />} />
         <Route path="/projetos/sos-maringa" element={<SosMaringaPage />} />
