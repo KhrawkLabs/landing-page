@@ -82,7 +82,7 @@ export default function KhrawkPage() {
           <div className="kh-avatar">
             <img
               src="/khrawk-conteudos.jpg"
-              alt="Logo do KHRAWK: personagem de fone de ouvido e óculos com a cidade neon ao fundo"
+              alt="Avatar do KHRAWK: ilustração de um rapaz de óculos com um pôr do sol retrô ao fundo"
               width={640}
               height={640}
             />
