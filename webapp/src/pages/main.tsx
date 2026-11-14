@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { Analytics } from "@vercel/analytics/react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import App from "./App.tsx";
 import AuDuoPage from "./AuDuoPage.tsx";
@@ -30,5 +31,8 @@ createRoot(document.getElementById("root")!).render(
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
+    {/* Contagem de visitas (Vercel Web Analytics, sem cookie). Só envia dados
+        em produção na Vercel; o painel fica em Analytics no projeto. */}
+    <Analytics />
   </StrictMode>,
 );
