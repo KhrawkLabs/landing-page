@@ -1,6 +1,6 @@
 # Política de Privacidade — SOS Maringá
 
-Última atualização: 9 de novembro de 2026
+Última atualização: 20 de novembro de 2026
 
 O SOS Maringá é um aplicativo gratuito da **Khrawk Labs** (responsável: Kauan Henrique Bertalha), feito para ajudar a população de Maringá (PR) em situações de emergência. Esta política explica, em linguagem simples, quais dados o app usa e o que acontece com eles, de acordo com a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018).
 
@@ -35,6 +35,12 @@ A localização não é guardada pelo app nem enviada para a Khrawk Labs. Você 
 
 O acesso às fotos é usado apenas para você escolher a foto de perfil. A imagem fica no seu celular.
 
+## Notificações de alerta
+
+Se você permitir notificações, o app confere os alertas do INMET em segundo plano, mais ou menos a cada 15 minutos (o próprio celular decide o momento), e avisa quando sai um alerta laranja ou vermelho para Maringá, quando ele piora, enfraquece ou termina. A conferência é a mesma consulta ao INMET descrita abaixo e é feita **pelo seu celular**: não existe servidor da Khrawk Labs nem cadastro do aparelho. Você pode desligar na aba Avisos ou nos ajustes do celular.
+
+Na versão web (instalada pela Tela de Início do iPhone) não há notificações; os alertas aparecem na aba Avisos com o app aberto.
+
 ## Mensagens e ligações
 
 Quando você toca para ligar ou mandar um SOS, o app abre o discador, o WhatsApp ou o aplicativo de SMS do seu celular com a mensagem pronta. **Quem envia é você**, pelo aplicativo escolhido, e o conteúdo vai apenas para os contatos que você selecionou. A partir daí, valem as políticas de privacidade desses aplicativos e da sua operadora.
@@ -49,7 +55,7 @@ Para mostrar o tempo, os alertas e o radar, o app consulta serviços públicos *
 
 Como em qualquer acesso à internet, esses serviços podem registrar dados técnicos da conexão, como o endereço IP, conforme as políticas deles.
 
-O **mapa** é exibido pelo Apple Maps (iPhone) ou pelo Google Maps (Android). **Traçar rota** abre o aplicativo de mapas do seu celular. O **grupo do WhatsApp** é aberto no WhatsApp, e a participação nele segue as regras e a política do WhatsApp.
+O **mapa** é exibido pelo Apple Maps no app do iPhone e pelo **OpenStreetMap** (openstreetmap.org) no Android e na versão web. As imagens do OpenStreetMap são baixadas para a região mostrada no mapa, sem enviar a sua localização. **Traçar rota** abre o aplicativo de mapas do seu celular. O **grupo do WhatsApp** é aberto no WhatsApp, e a participação nele segue as regras e a política do WhatsApp.
 
 ## Compartilhamento de dados
 

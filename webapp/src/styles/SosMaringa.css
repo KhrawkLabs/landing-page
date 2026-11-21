@@ -119,6 +119,128 @@
   cursor: default;
 }
 
+.sos-botao-contorno {
+  border: 2px solid #6a6a6a;
+  color: var(--sos-branco);
+}
+
+.sos-botao-contorno:hover {
+  border-color: var(--sos-branco);
+}
+
+.sos-botao-vermelho {
+  background: var(--sos-vermelho);
+  color: var(--sos-branco);
+}
+
+.sos-botao-vermelho:hover {
+  background: #a51f1f;
+}
+
+/* --- Instalar (Android e iPhone) --- */
+
+.sos-baixar-grade {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 32px);
+  margin-top: clamp(32px, 5vw, 48px);
+}
+
+.sos-baixar-card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 3.5vw, 40px);
+  border-top: 8px solid var(--sos-preto);
+  background: var(--sos-cinza);
+  scroll-margin-top: 96px;
+}
+
+.sos-baixar-destaque {
+  border-top-color: var(--sos-vermelho);
+}
+
+.sos-baixar-cabeca {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sos-baixar-cabeca h3 {
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.sos-baixar-selo {
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: var(--sos-preto);
+  color: var(--sos-branco);
+  font-size: 0.813rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sos-baixar-resumo {
+  margin: 12px 0 24px;
+  color: var(--sos-texto-2);
+}
+
+.sos-baixar-card .sos-botao {
+  align-self: flex-start;
+}
+
+.sos-passos {
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: passo;
+}
+
+.sos-passos li {
+  position: relative;
+  padding: 12px 0 12px 44px;
+  border-top: 1px solid var(--sos-linha);
+  counter-increment: passo;
+  line-height: 1.45;
+}
+
+.sos-passos li::before {
+  content: counter(passo);
+  position: absolute;
+  top: 11px;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--sos-preto);
+  color: var(--sos-branco);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.sos-passos strong {
+  font-weight: 700;
+}
+
+.sos-icone-inline {
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: -0.2em;
+  color: #0a66d8;
+}
+
+.sos-baixar-nota {
+  margin: auto 0 0;
+  padding-top: 20px;
+  color: var(--sos-texto-2);
+  font-size: 0.938rem;
+}
+
 /* Print do app saindo de baixo do topo, apoiado na faixa vermelha. */
 .sos-print {
   display: block;
@@ -386,6 +508,14 @@
   .sos-botao,
   .sos-loja {
     width: 100%;
+  }
+
+  .sos-baixar-grade {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sos-baixar-card .sos-botao {
+    align-self: stretch;
   }
 }
 

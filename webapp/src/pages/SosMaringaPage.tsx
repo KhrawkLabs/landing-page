@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NavMenu from "../components/NavMenu";
 import Rodape from "../components/Rodape";
@@ -7,6 +7,142 @@ import "../styles/SosMaringa.css";
 
 const SOS_GRUPO_WHATSAPP =
   "https://chat.whatsapp.com/EyBJOQpef9V25dhG3NTgKk";
+
+/** APK do Android (build "preview" do EAS), servido pelo próprio site. */
+const SOS_APK = "/downloads/sos-maringa.apk";
+/** Versão web instalável, gerada por sos-maringa/scripts/publicar-web.mjs em public/app. */
+const SOS_APP_WEB = "/app/";
+
+type Sistema = "android" | "iphone" | "outro";
+
+function detectarSistema(): Sistema {
+  if (typeof navigator === "undefined") return "outro";
+  const ua = navigator.userAgent;
+  if (/Android/i.test(ua)) return "android";
+  // iPadOS 13+ se apresenta como Mac, mas tem tela de toque.
+  if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) {
+    return "iphone";
+  }
+  return "outro";
+}
+
+/** Ícone "Compartilhar" do Safari (quadrado com seta para cima), para o passo a passo. */
+function IconeCompartilhar() {
+  return (
+    <svg className="sos-icone-inline" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M12 3v12M7.5 7.5 12 3l4.5 4.5M8 11H6a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function IconeAdicionar() {
+  return (
+    <svg className="sos-icone-inline" viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="4" y="4" width="16" height="16" rx="3" fill="none" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M12 8v8M8 12h8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function SecaoBaixar() {
+  const [sistema] = useState<Sistema>(detectarSistema);
+
+  const android = (
+    <article
+      id="baixar-android"
+      className={`sos-baixar-card${sistema === "android" ? " sos-baixar-destaque" : ""}`}
+      key="android"
+    >
+      <div className="sos-baixar-cabeca">
+        <h3>Android</h3>
+        {sistema === "android" && <span className="sos-baixar-selo">Seu celular</span>}
+      </div>
+      <p className="sos-baixar-resumo">
+        O app completo, instalado direto pelo arquivo, com notificação quando
+        sai alerta laranja ou vermelho para Maringá. Grátis, sem cadastro.
+      </p>
+      <a href={SOS_APK} className="sos-botao sos-botao-vermelho" download>
+        Baixar APK
+      </a>
+      <ol className="sos-passos">
+        <li>Toque em <strong>Baixar APK</strong>.</li>
+        <li>
+          Abra o arquivo baixado. Se o celular pedir, permita{" "}
+          <strong>instalar apps desta fonte</strong>.
+        </li>
+        <li>Toque em <strong>Instalar</strong> e abra o SOS Maringá.</li>
+      </ol>
+      <p className="sos-baixar-nota">
+        O aviso de "app desconhecido" aparece porque o arquivo não vem da Play
+        Store. Quando o app chegar lá, este botão passa a levar para a loja.
+      </p>
+    </article>
+  );
+
+  const iphone = (
+    <article
+      id="baixar-iphone"
+      className={`sos-baixar-card${sistema === "iphone" ? " sos-baixar-destaque" : ""}`}
+      key="iphone"
+    >
+      <div className="sos-baixar-cabeca">
+        <h3>iPhone</h3>
+        {sistema === "iphone" && <span className="sos-baixar-selo">Seu celular</span>}
+      </div>
+      <p className="sos-baixar-resumo">
+        Instala pelo Safari e fica na Tela de Início como qualquer app. Não
+        precisa da App Store.
+      </p>
+      <a href={SOS_APP_WEB} className="sos-botao sos-botao-vermelho">
+        Abrir o SOS Maringá
+      </a>
+      <ol className="sos-passos">
+        <li>
+          Toque em <strong>Abrir o SOS Maringá</strong>, no <strong>Safari</strong>.
+        </li>
+        <li>
+          Toque em <strong>Compartilhar</strong> <IconeCompartilhar />, na barra
+          de baixo.
+        </li>
+        <li>
+          Role e toque em <strong>Adicionar à Tela de Início</strong>{" "}
+          <IconeAdicionar />, depois em <strong>Adicionar</strong>.
+        </li>
+        <li>Abra pelo ícone novo na Tela de Início.</li>
+      </ol>
+      <p className="sos-baixar-nota">
+        Depois de aberto uma vez, abre mesmo sem internet. Telefones, contatos,
+        ficha médica e o último tempo baixado ficam no celular. Mapa e radar ao
+        vivo precisam de sinal. Nesta versão não há notificação de alerta: os
+        avisos aparecem com o app aberto.
+      </p>
+    </article>
+  );
+
+  return (
+    <section className="sos-secao sos-baixar" id="baixar" aria-labelledby="baixar-titulo">
+      <div className="container">
+        <h2 className="sos-h2" id="baixar-titulo">
+          Instale no seu celular
+        </h2>
+        <p className="sos-p">
+          Escolha o seu celular. Leva menos de um minuto, e é bom deixar
+          instalado antes do próximo temporal.
+        </p>
+        <div className="sos-baixar-grade">
+          {sistema === "iphone" ? [iphone, android] : [android, iphone]}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 const NUMEROS = [
   { numero: "192", nome: "SAMU", cor: "#D32F2F" },
@@ -75,16 +211,11 @@ export default function SosMaringaPage() {
                 internet.
               </p>
               <div className="sos-acoes">
-                <span className="sos-loja" aria-disabled="true">
-                  Em breve na Play Store
-                </span>
-                <a
-                  href={SOS_GRUPO_WHATSAPP}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="sos-botao sos-botao-claro"
-                >
-                  Entrar no grupo de ajuda
+                <a href="#baixar-android" className="sos-botao sos-botao-claro">
+                  Baixar para Android
+                </a>
+                <a href="#baixar-iphone" className="sos-botao sos-botao-contorno">
+                  Instalar no iPhone
                 </a>
               </div>
             </div>
@@ -114,7 +245,9 @@ export default function SosMaringaPage() {
           ))}
         </section>
 
-        <section className="sos-secao">
+        <SecaoBaixar />
+
+        <section className="sos-secao sos-secao-cinza">
           <div className="container">
             <h2 className="sos-h2">O app tem quatro abas</h2>
             <div className="sos-abas">
@@ -136,7 +269,7 @@ export default function SosMaringaPage() {
           </div>
         </section>
 
-        <section className="sos-secao sos-secao-cinza">
+        <section className="sos-secao">
           <div className="container sos-duas">
             <div>
               <h2 className="sos-h2">Funciona sem internet</h2>
