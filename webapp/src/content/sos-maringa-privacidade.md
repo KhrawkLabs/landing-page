@@ -48,6 +48,8 @@ Para mostrar o tempo, os alertas e o radar, o app consulta serviços públicos *
 - **INMET** (Instituto Nacional de Meteorologia): alertas meteorológicos oficiais.
 - **RainViewer** (rainviewer.com): imagens do radar de chuva, mostradas no mapa da aba Avisos e usadas para estimar se há chuva chegando. O cálculo é feito no seu celular.
 
+A aba **Notícias** busca no site da Khrawk Labs (hospedado na Vercel) uma lista de títulos publicados por portais da região. Nenhum dado seu é enviado nessa consulta. Ao tocar numa notícia, ela abre no site do portal, e aí valem as regras e os anúncios dele.
+
 O **mapa** é exibido pelo Apple Maps no app do iPhone e pelo **OpenStreetMap** (openstreetmap.org) no Android e na versão web. As imagens do OpenStreetMap são baixadas para a região mostrada no mapa, sem enviar a sua localização. **Traçar rota** abre o aplicativo de mapas do seu celular. O **grupo do WhatsApp** é aberto no WhatsApp, e a participação nele segue as regras e a política do WhatsApp.
 
 ## Atualizações do app
