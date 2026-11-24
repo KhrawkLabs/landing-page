@@ -1,6 +1,6 @@
 # Política de Privacidade — SOS Maringá
 
-Última atualização: 20 de novembro de 2026
+Última atualização: 23 de novembro de 2026
 
 O SOS Maringá é um aplicativo gratuito da **Khrawk Labs** (responsável: Kauan Henrique Bertalha), feito para ajudar a população de Maringá (PR) em situações de emergência. Esta política explica, em linguagem simples, quais dados o app usa e o que acontece com eles, de acordo com a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018).
 
@@ -53,13 +53,22 @@ Para mostrar o tempo, os alertas e o radar, o app consulta serviços públicos *
 - **INMET** (Instituto Nacional de Meteorologia): alertas meteorológicos oficiais.
 - **RainViewer** (rainviewer.com): imagens do radar de chuva exibidas sobre o mapa da aba Avisos.
 
-Como em qualquer acesso à internet, esses serviços podem registrar dados técnicos da conexão, como o endereço IP, conforme as políticas deles.
-
 O **mapa** é exibido pelo Apple Maps no app do iPhone e pelo **OpenStreetMap** (openstreetmap.org) no Android e na versão web. As imagens do OpenStreetMap são baixadas para a região mostrada no mapa, sem enviar a sua localização. **Traçar rota** abre o aplicativo de mapas do seu celular. O **grupo do WhatsApp** é aberto no WhatsApp, e a participação nele segue as regras e a política do WhatsApp.
+
+## Atualizações do app
+
+No Android, ao abrir, o app procura correções:
+
+- **Expo** (expo.dev): de onde o app baixa as atualizações automáticas. A consulta leva a versão do app, o sistema do celular e um **código aleatório desta instalação**, que a Expo usa para contar aparelhos ativos. O código não tem ligação com o seu nome, telefone, contatos ou ficha médica.
+- **Site da Khrawk Labs** (hospedado na Vercel): um arquivo com o número da versão mais nova, para avisar quando há um APK para baixar. Nenhum dado seu é enviado nessa consulta.
+
+A versão web se atualiza pelo próprio site, quando aberta com internet.
+
+Como em qualquer acesso à internet, esses serviços e os citados acima podem registrar dados técnicos da conexão, como o endereço IP, conforme as políticas deles.
 
 ## Compartilhamento de dados
 
-A Khrawk Labs não coleta, não compartilha e não vende dados pessoais. Os únicos envios de informação são os que você faz por conta própria (ligações e mensagens de SOS).
+A Khrawk Labs não coleta, não compartilha e não vende dados pessoais. Os envios de informação são os que você faz por conta própria (ligações e mensagens de SOS) e as consultas técnicas descritas acima, como a busca de atualizações no Android.
 
 ## Seus direitos e como apagar seus dados
 
