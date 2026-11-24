@@ -1,6 +1,6 @@
 # Política de Privacidade — SOS Maringá
 
-Última atualização: 23 de novembro de 2026
+Última atualização: 24 de novembro de 2026
 
 O SOS Maringá é um aplicativo gratuito da **Khrawk Labs** (responsável: Kauan Henrique Bertalha), feito para ajudar a população de Maringá (PR) em situações de emergência. Esta política explica, em linguagem simples, quais dados o app usa e o que acontece com eles, de acordo com a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018).
 
@@ -16,8 +16,7 @@ Estes dados são gravados apenas no armazenamento do próprio aparelho:
 
 - **Contatos de emergência:** nome, telefone e ordem de prioridade que você cadastrar.
 - **Ficha médica:** nome, tipo sanguíneo, alergias, condições, medicamentos, plano de saúde e o "recado no SOS", se você preencher.
-- **Foto de perfil**, se você escolher uma da sua galeria.
-- **Preferências:** alto contraste, texto maior e se você já viu a apresentação inicial.
+- **Preferências:** alto contraste, texto maior e notificações.
 - **Cópias das últimas informações de tempo e alertas**, para o app funcionar sem internet.
 
 Esses dados podem entrar no backup automático do seu celular (iCloud ou Google), conforme as configurações do seu aparelho.
@@ -27,17 +26,13 @@ Esses dados podem entrar no backup automático do seu celular (iCloud ou Google)
 O app pede permissão de localização **somente durante o uso** e só a usa quando você toca em:
 
 - **"Ver o ponto mais próximo"**, no Mapa, para calcular a distância até os pontos de atendimento. O cálculo é feito no próprio celular.
-- **"Avisar meus contatos" ou SOS por WhatsApp**, no Perfil, para incluir sua localização na mensagem enviada aos seus contatos.
+- **"Avisar meus contatos" ou SOS por WhatsApp**, na aba SOS, para incluir sua localização na mensagem enviada aos seus contatos.
 
 A localização não é guardada pelo app nem enviada para a Khrawk Labs. Você pode negar ou revogar a permissão a qualquer momento nos ajustes do celular. O resto do app continua funcionando.
 
-## Fotos
-
-O acesso às fotos é usado apenas para você escolher a foto de perfil. A imagem fica no seu celular.
-
 ## Notificações de alerta
 
-Se você permitir notificações, o app confere os alertas do INMET em segundo plano, mais ou menos a cada 15 minutos (o próprio celular decide o momento), e avisa quando sai um alerta laranja ou vermelho para Maringá, quando ele piora, enfraquece ou termina. A conferência é a mesma consulta ao INMET descrita abaixo e é feita **pelo seu celular**: não existe servidor da Khrawk Labs nem cadastro do aparelho. Você pode desligar na aba Avisos ou nos ajustes do celular.
+Se você permitir notificações, o app confere o radar de chuva e os alertas do INMET em segundo plano, mais ou menos a cada 15 minutos (o próprio celular decide o momento), e avisa quando há tempestade chegando em Maringá ou quando sai um alerta laranja ou vermelho para Maringá, quando ele piora, enfraquece ou termina. A conferência são as mesmas consultas ao INMET, ao RainViewer e ao Open-Meteo descritas abaixo e são feitas **pelo seu celular**: não existe servidor da Khrawk Labs nem cadastro do aparelho. Você pode desligar na aba Avisos ou nos ajustes do celular.
 
 Na versão web (instalada pela Tela de Início do iPhone) não há notificações; os alertas aparecem na aba Avisos com o app aberto.
 
@@ -49,9 +44,9 @@ Quando você toca para ligar ou mandar um SOS, o app abre o discador, o WhatsApp
 
 Para mostrar o tempo, os alertas e o radar, o app consulta serviços públicos **sem enviar dados pessoais nem a sua localização**. As consultas usam coordenadas fixas de Maringá e da região em volta:
 
-- **Open-Meteo** (open-meteo.com): previsão do tempo, comparação de modelos de previsão e vento atual na região.
+- **Open-Meteo** (open-meteo.com): previsão do tempo e vento de altitude, que ajuda a estimar para onde a chuva vai.
 - **INMET** (Instituto Nacional de Meteorologia): alertas meteorológicos oficiais.
-- **RainViewer** (rainviewer.com): imagens do radar de chuva exibidas sobre o mapa da aba Avisos.
+- **RainViewer** (rainviewer.com): imagens do radar de chuva, mostradas no mapa da aba Avisos e usadas para estimar se há chuva chegando. O cálculo é feito no seu celular.
 
 O **mapa** é exibido pelo Apple Maps no app do iPhone e pelo **OpenStreetMap** (openstreetmap.org) no Android e na versão web. As imagens do OpenStreetMap são baixadas para a região mostrada no mapa, sem enviar a sua localização. **Traçar rota** abre o aplicativo de mapas do seu celular. O **grupo do WhatsApp** é aberto no WhatsApp, e a participação nele segue as regras e a política do WhatsApp.
 
@@ -74,7 +69,7 @@ A Khrawk Labs não coleta, não compartilha e não vende dados pessoais. Os envi
 
 Como os dados ficam no seu celular, você tem controle total sobre eles:
 
-- **Editar ou apagar** contatos, a ficha médica e a foto direto no app, na aba Perfil.
+- **Editar ou apagar** contatos e a ficha médica direto no app, na aba SOS.
 - **Apagar tudo** desinstalando o app.
 
 Se tiver dúvidas ou quiser exercer qualquer direito previsto na LGPD, fale com a gente.

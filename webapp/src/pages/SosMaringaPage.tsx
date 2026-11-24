@@ -164,7 +164,7 @@ const ABAS = [
     print: "/projetos/sos-maringa/avisos.webp",
     alt: "Tela Avisos com os alertas do INMET para Maringá e a previsão das próximas 24 horas",
     texto:
-      "Os alertas oficiais do INMET que valem para Maringá e a previsão de tempestade para as próximas 24 horas: chuva, milímetros e rajadas de vento, hora a hora.",
+      "Diz se há tempestade chegando em até 2 horas, pelo radar, e mostra o alerta oficial do INMET que vale para Maringá.",
   },
   {
     nome: "Mapa",
@@ -174,7 +174,7 @@ const ABAS = [
       "Prefeitura, UPAs, hospitais e outros pontos de atendimento. Veja qual fica mais perto, ligue ou trace a rota no aplicativo de mapas do celular.",
   },
   {
-    nome: "Perfil",
+    nome: "SOS",
     print: "/projetos/sos-maringa/perfil.webp",
     alt: "Tela Perfil com o botão de ligar para os contatos, SOS por WhatsApp e SMS e a lista de contatos",
     texto:
